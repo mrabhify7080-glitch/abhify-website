@@ -343,7 +343,7 @@ if (pCanvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(251,113,133,${this.alpha})`;
+      ctx.fillStyle = `rgba(96,165,250,${this.alpha})`;
       ctx.fill();
     }
   }
@@ -360,7 +360,7 @@ if (pCanvas) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(220,38,38,${.12 * (1 - d / 120)})`;
+          ctx.strokeStyle = `rgba(37,99,235,${.18 * (1 - d / 120)})`;
           ctx.lineWidth = .5;
           ctx.stroke();
         }
