@@ -1,5 +1,5 @@
 /* ============================================================
-   AbhiFY — app.js  •  Futuristic AI Agency Engine
+   AbhiFY — app.js  •  Scandinavian Minimal Agency Engine
    ============================================================ */
 (() => {
 "use strict";
@@ -8,23 +8,25 @@
 
 const SERVICES = [
   { icon:"fa-solid fa-magnifying-glass-chart", title:"SEO", desc:"On-page, off-page, technical SEO and keyword strategy to rank higher and drive organic traffic." },
-  { icon:"fa-brands fa-google", title:"Google Ads", desc:"Search, Display, Shopping & YouTube campaigns optimised for maximum ROAS and lead quality." },
-  { icon:"fa-brands fa-meta", title:"Meta Ads", desc:"High-converting Facebook & Instagram campaigns — from creatives to lookalike audiences." },
-  { icon:"fa-solid fa-laptop-code", title:"Website Design", desc:"Modern, responsive, conversion-focused websites built with clean code and premium UI/UX." },
+  { icon:"fa-brands fa-google", title:"Google Ads", desc:"Search, Display, Shopping & YouTube campaigns optimized for maximum ROAS and lead quality." },
+  { icon:"fa-brands fa-meta", title:"Meta Ads", desc:"High-converting Facebook & Instagram campaigns — from creatives to lookalike audience funnels." },
+  { icon:"fa-solid fa-laptop-code", title:"Website Design", desc:"Modern, responsive, conversion-focused websites built with clean code and luxury UI/UX." },
   { icon:"fa-solid fa-hashtag", title:"Social Media Marketing", desc:"Content creation, reels, community growth and strategic brand positioning across platforms." },
-  { icon:"fa-solid fa-palette", title:"Branding", desc:"Eye-catching brand identities, typography, color systems, logos & digital design kits." },
-  { icon:"fa-solid fa-chart-pie", title:"Analytics & CRO", desc:"Google Analytics, Tag Manager, custom dashboards — track metrics and optimize conversions." },
+  { icon:"fa-solid fa-chess-knight", title:"Brand Strategy", desc:"Eye-catching brand identities, positioning strategy, color systems & digital guidelines." },
+  { icon:"fa-solid fa-chart-pie", title:"Analytics & CRO", desc:"Google Analytics, Tag Manager, custom dashboards — track metrics and optimize conversion rates." },
   { icon:"fa-solid fa-envelope-open-text", title:"Email Marketing", desc:"High-converting email sequences, automated funnels, newsletter design and retention loops." },
+  { icon:"fa-solid fa-pen-nib", title:"Content Marketing", desc:"SEO blog articles, copy, case studies, and editorial content that builds industry authority." },
+  { icon:"fa-solid fa-palette", title:"Graphic Design", desc:"Custom brand graphics, social media templates, ad banners, and marketing collaterals." },
   { icon:"fa-solid fa-clapperboard", title:"Video Editing", desc:"High-engagement video shorts, reels, ad creatives, motion graphics and promotional videos." }
 ];
 
 const PROCESS_STEPS = [
-  { num:"01", title:"Discovery", desc:"Understanding your brand goals, target audience, competitive landscape, and growth KPIs." },
+  { num:"01", title:"Discovery", desc:"Understanding your brand vision, target audience, competitive landscape, and growth KPIs." },
   { num:"02", title:"Research", desc:"In-depth keyword auditing, audience behavior analysis, and ad creative benchmarking." },
-  { num:"03", title:"Strategy", desc:"Crafting a custom data-driven marketing blueprint tailored for high ROI and scale." },
+  { num:"03", title:"Planning", desc:"Crafting a custom data-driven marketing blueprint tailored for high ROI and scale." },
   { num:"04", title:"Execution", desc:"Building high-converting assets, launching campaigns, and deploying website improvements." },
   { num:"05", title:"Optimization", desc:"Continuous A/B testing, bid management, CRO tweaks, and funnel refining." },
-  { num:"06", title:"Scaling", desc:"Expanding reach, scaling profitable ad spend, and driving predictable monthly revenue." }
+  { num:"06", title:"Growth", desc:"Expanding reach, scaling profitable ad spend, and driving predictable monthly revenue." }
 ];
 
 const PRICING_PLANS = [
@@ -32,7 +34,7 @@ const PRICING_PLANS = [
     name: "Starter",
     price: "₹19,999",
     period: "/month",
-    desc: "Essential marketing & search visibility for growing startups.",
+    desc: "Essential marketing & search visibility for growing brands.",
     featured: false,
     badge: "Essential",
     features: [
@@ -74,6 +76,25 @@ const PRICING_PLANS = [
       "Priority Strategy Consultation",
       "Custom API & Analytics Dashboard"
     ]
+  }
+];
+
+const FAQS = [
+  {
+    q: "How soon can I expect results from SEO & Ads campaigns?",
+    a: "Google Ads & Meta Ads start generating leads within 48–72 hours of launch. SEO results typically begin compounding within 60 to 90 days as domain authority builds."
+  },
+  {
+    q: "Do you handle custom website design & development?",
+    a: "Yes! We build modern, conversion-focused websites using clean HTML, CSS, JavaScript, and WordPress tailored for fast loading speed and mobile responsiveness."
+  },
+  {
+    q: "How do we track ROI and campaign performance?",
+    a: "We set up real-time Google Analytics and custom performance dashboards so you can track leads, cost-per-acquisition (CPA), and return on ad spend (ROAS) transparently."
+  },
+  {
+    q: "Is there a minimum contract duration?",
+    a: "We offer flexible month-to-month plans as well as discounted annual growth retainers. You are never locked into long rigid contracts."
   }
 ];
 
@@ -242,7 +263,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = $("#loader");
     if (loader) loader.classList.add("hide");
-  }, 1600);
+  }, 1400);
 });
 
 
@@ -372,10 +393,10 @@ $$(".count-up").forEach(el => countObs.observe(el));
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); } });
 }, { threshold: 0.12 });
-$$(".reveal, .reveal-zoom, .reveal-blur").forEach(el => revealObs.observe(el));
+$$(".reveal, .reveal-zoom").forEach(el => revealObs.observe(el));
 
 
-/* ---------- PARTICLES (Neon Purple) ---------- */
+/* ---------- PARTICLES (Warm Champagne) ---------- */
 
 const pCanvas = $("#particles-canvas");
 if (pCanvas) {
@@ -393,7 +414,7 @@ if (pCanvas) {
       this.r = Math.random() * 2.2 + .5;
       this.vx = (Math.random() - .5) * .4;
       this.vy = (Math.random() - .5) * .4;
-      this.alpha = Math.random() * .55 + .15;
+      this.alpha = Math.random() * .4 + .1;
     }
     update() {
       this.x += this.vx; this.y += this.vy;
@@ -403,12 +424,12 @@ if (pCanvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(168,85,247,${this.alpha})`;
+      ctx.fillStyle = `rgba(183,144,104,${this.alpha})`;
       ctx.fill();
     }
   }
 
-  for (let i = 0; i < 75; i++) particles.push(new Particle());
+  for (let i = 0; i < 70; i++) particles.push(new Particle());
 
   function drawLines() {
     for (let i = 0; i < particles.length; i++) {
@@ -420,7 +441,7 @@ if (pCanvas) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(139,92,246,${.18 * (1 - d / 120)})`;
+          ctx.strokeStyle = `rgba(166,124,82,${.14 * (1 - d / 120)})`;
           ctx.lineWidth = .5;
           ctx.stroke();
         }
@@ -438,7 +459,7 @@ if (pCanvas) {
 }
 
 
-/* ---------- RENDER: SERVICES ---------- */
+/* ---------- RENDER: SERVICES (11 Premium Cards) ---------- */
 
 const servicesGrid = $("#servicesGrid");
 if (servicesGrid) {
@@ -446,13 +467,35 @@ if (servicesGrid) {
     const card = el("div", { className: "service-card glass-card reveal" });
     card.style.setProperty("--i", i);
     card.innerHTML = `
-      <span class="service-num">0${i + 1}</span>
+      <span class="service-num">${i + 1 < 10 ? '0' + (i + 1) : i + 1}</span>
       <div class="service-icon"><i class="${s.icon}"></i></div>
       <h3>${s.title}</h3>
       <p>${s.desc}</p>`;
     servicesGrid.appendChild(card);
   });
   $$(".reveal", servicesGrid).forEach(el => revealObs.observe(el));
+}
+
+
+/* ---------- RENDER: FAQ ACCORDION ---------- */
+
+const faqWrap = $("#faqWrap");
+if (faqWrap) {
+  FAQS.forEach((f, i) => {
+    const item = el("div", { className: `faq-item glass-card${i === 0 ? " active" : ""}` });
+    item.innerHTML = `
+      <div class="faq-question">
+        <span>${f.q}</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>${f.a}</p>
+      </div>`;
+    item.querySelector(".faq-question").addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+    faqWrap.appendChild(item);
+  });
 }
 
 
@@ -485,7 +528,7 @@ if (pricingGrid) {
         <span class="pricing-badge">${p.badge}</span>
         <h3>${p.name}</h3>
         <div class="pricing-price"><b>${p.price}</b><span>${p.period}</span></div>
-        <p style="font-size:13.5px;color:var(--text);">${p.desc}</p>
+        <p style="font-size:13.5px;color:var(--text-secondary);">${p.desc}</p>
         <ul class="pricing-features">
           ${p.features.map(f => `<li><i class="fa-solid fa-circle-check"></i>${f}</li>`).join("")}
         </ul>
@@ -521,7 +564,6 @@ if (skillsGrid) {
       </div>`;
     skillsGrid.appendChild(item);
   });
-  // Animate skill rings on scroll
   const skillObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -643,7 +685,6 @@ if (testiWrap) {
     $$(".testi-dots span", testiWrap)[curSlide].classList.add("active");
   }
 
-  // Auto rotate
   setInterval(() => goSlide((curSlide + 1) % slides.length), 5000);
 }
 
@@ -700,12 +741,6 @@ if (lbClose) lbClose.addEventListener("click", closeLightbox);
 if (lightbox) lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
 if (lbPrev) lbPrev.addEventListener("click", () => { lbIdx = (lbIdx - 1 + GALLERY.length) % GALLERY.length; if (lbLabel) lbLabel.textContent = GALLERY[lbIdx].cat; });
 if (lbNext) lbNext.addEventListener("click", () => { lbIdx = (lbIdx + 1) % GALLERY.length; if (lbLabel) lbLabel.textContent = GALLERY[lbIdx].cat; });
-document.addEventListener("keydown", e => {
-  if (!lightbox || !lightbox.classList.contains("open")) return;
-  if (e.key === "Escape") closeLightbox();
-  if (e.key === "ArrowLeft" && lbPrev) lbPrev.click();
-  if (e.key === "ArrowRight" && lbNext) lbNext.click();
-});
 
 
 /* ---------- RENDER: SOCIAL MEDIA ---------- */
@@ -715,7 +750,6 @@ const smCards = $("#smCards");
 const smFloat = $("#smFloatIcons");
 
 if (smTabs && smCards) {
-  // Floating icons
   if (smFloat) {
     FLOAT_ICONS_DATA.forEach((fi, i) => {
       const icon = el("div", { className: "fi" });
@@ -729,7 +763,6 @@ if (smTabs && smCards) {
     });
   }
 
-  // Tabs
   SM_PLATFORMS.forEach((p, i) => {
     const btn = el("button", { className: `sm-tab-btn${i === 0 ? " active" : ""}`, "data-id": p.id });
     btn.innerHTML = `<i class="${p.icon}"></i>${p.label}`;
@@ -737,7 +770,6 @@ if (smTabs && smCards) {
     smTabs.appendChild(btn);
   });
 
-  // Cards
   SM_PLATFORMS.forEach((p, i) => {
     const card = el("div", { className: `sm-card glass-card${i === 0 ? " active" : ""}`, "data-id": p.id });
     card.innerHTML = `
@@ -762,7 +794,6 @@ if (smTabs && smCards) {
   function switchSM(id) {
     $$(".sm-tab-btn", smTabs).forEach(b => b.classList.toggle("active", b.dataset.id === id));
     $$(".sm-card", smCards).forEach(c => c.classList.toggle("active", c.dataset.id === id));
-    // Animate bars in the active card
     setTimeout(() => animateSMBars(), 100);
   }
 
@@ -775,7 +806,6 @@ if (smTabs && smCards) {
     });
   }
 
-  // Observe for initial animation
   const smObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -835,11 +865,9 @@ if (parallaxImg) {
   const activeLabel = map[path];
   if (!activeLabel) return;
 
-  // Desktop nav
   $$(".nav-links a").forEach(a => {
     if (a.textContent.trim() === activeLabel) a.classList.add("active");
   });
-  // Mobile nav
   $$(".mobile-nav a").forEach(a => {
     if (a.textContent.trim() === activeLabel) a.classList.add("active");
   });
