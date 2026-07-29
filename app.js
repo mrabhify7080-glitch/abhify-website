@@ -257,14 +257,85 @@ function el(tag, attrs = {}, children = []) {
 }
 
 
-/* ---------- LOADER ---------- */
+/* ---------- GLOBAL ANIMATED PRELOADER ENGINE ---------- */
 
-window.addEventListener("load", () => {
+(function initPreloader() {
+  const preloaderFill = $("#preloaderFill");
+  const preloaderPct  = $("#preloaderPct");
+  const preCanvas     = $("#preloader-particles");
+  const loader        = $("#loader");
+  let progress = 0;
+  let isLoaded = false;
+
+  // Counter Animation
+  const timer = setInterval(() => {
+    if (progress < 90) {
+      progress += Math.floor(Math.random() * 8) + 3;
+      if (progress > 90) progress = 90;
+    } else if (isLoaded) {
+      progress += 5;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(timer);
+        setTimeout(() => {
+          if (loader) loader.classList.add("hide");
+        }, 300);
+      }
+    }
+    if (preloaderFill) preloaderFill.style.width = progress + "%";
+    if (preloaderPct)  preloaderPct.textContent  = progress + "%";
+  }, 40);
+
+  window.addEventListener("load", () => {
+    isLoaded = true;
+  });
+
+  // Fallback max 3 seconds
   setTimeout(() => {
-    const loader = $("#loader");
-    if (loader) loader.classList.add("hide");
-  }, 1400);
-});
+    isLoaded = true;
+  }, 2500);
+
+  // Red Particles Engine
+  if (preCanvas) {
+    const ctx = preCanvas.getContext("2d");
+    let pList = [];
+    function resizePreCanvas() {
+      preCanvas.width  = window.innerWidth;
+      preCanvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizePreCanvas);
+    resizePreCanvas();
+
+    for (let i = 0; i < 25; i++) {
+      pList.push({
+        x: Math.random() * preCanvas.width,
+        y: Math.random() * preCanvas.height,
+        r: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        alpha: Math.random() * 0.6 + 0.2
+      });
+    }
+
+    function animPreParticles() {
+      if (loader && loader.classList.contains("hide")) return;
+      ctx.clearRect(0, 0, preCanvas.width, preCanvas.height);
+      pList.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > preCanvas.width)  p.vx *= -1;
+        if (p.y < 0 || p.y > preCanvas.height) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 30, 30, ${p.alpha})`;
+        ctx.shadowColor = "#FF1E1E";
+        ctx.shadowBlur = 8;
+        ctx.fill();
+      });
+      requestAnimationFrame(animPreParticles);
+    }
+    animPreParticles();
+  }
+})();
 
 
 /* ---------- SCROLL PROGRESS ---------- */
