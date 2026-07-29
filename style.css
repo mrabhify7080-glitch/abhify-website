@@ -615,27 +615,38 @@ header.scrolled .brand-logo-img {
 
 .nav-links {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(166, 124, 82, 0.2);
+  box-shadow: 0 4px 20px rgba(166, 124, 82, 0.08);
 }
 .nav-links a {
   font-family: var(--font-alt);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   position: relative;
-  padding: 7px 16px;
+  padding: 8px 18px;
   border-radius: 100px;
   transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
 }
 .nav-links a:hover {
-  color: var(--text-primary);
-  background: rgba(166, 124, 82, 0.08);
+  color: var(--btn-primary);
+  background: rgba(166, 124, 82, 0.1);
+  transform: translateY(-1px);
 }
 .nav-links a.active {
   color: var(--btn-primary);
-  font-weight: 600;
-  background: rgba(166, 124, 82, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(166, 124, 82, 0.25);
+  font-weight: 700;
+  background: rgba(166, 124, 82, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(166, 124, 82, 0.3);
 }
 
 .nav-cta {
