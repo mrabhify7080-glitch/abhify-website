@@ -1554,6 +1554,56 @@ nav {
   background: var(--card);
   transition: border-color 0.3s ease;
 }
+body {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-body);
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: pageBodyFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageBodyFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Fast Luxury Page Wipe Curtain Overlay */
+.page-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #F8F6F3 0%, #EFECE6 100%);
+  pointer-events: none;
+  transform-origin: top;
+  animation: pageWipeSlide 0.55s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+@keyframes pageWipeSlide {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 .faq-question {
   padding: 22px 28px;
   display: flex;
