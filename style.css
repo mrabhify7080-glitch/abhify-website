@@ -2367,6 +2367,57 @@ footer {
   box-shadow: 0 2px 10px rgba(15, 88, 189, 0.7) !important;
   transform: scale(0.94) !important;
 }
+
+/* WhatsApp Green Hover & Click Effect */
+.wa-link,
+.social-row a[href*="wa.me"],
+.social-row a[href*="whatsapp"] {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.wa-link:hover,
+.social-row a[href*="wa.me"]:hover,
+.social-row a[href*="whatsapp"]:hover {
+  color: #25D366 !important; /* WhatsApp Green */
+  border-color: #25D366 !important;
+  background: rgba(37, 211, 102, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4) !important;
+  transform: translateY(-4px) scale(1.12) !important;
+}
+
+.wa-link:active,
+.social-row a[href*="wa.me"]:active,
+.social-row a[href*="whatsapp"]:active {
+  color: #1DA851 !important; /* Deep Green on Click */
+  background: rgba(29, 168, 81, 0.25) !important;
+  border-color: #1DA851 !important;
+  box-shadow: 0 2px 10px rgba(29, 168, 81, 0.7) !important;
+  transform: scale(0.94) !important;
+}
+
+/* LinkedIn Blue Hover & Click Effect */
+.li-link,
+.social-row a[href*="linkedin"] {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.li-link:hover,
+.social-row a[href*="linkedin"]:hover {
+  color: #0A66C2 !important; /* LinkedIn Blue */
+  border-color: #0A66C2 !important;
+  background: rgba(10, 102, 194, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4) !important;
+  transform: translateY(-4px) scale(1.12) !important;
+}
+
+.li-link:active,
+.social-row a[href*="linkedin"]:active {
+  color: #004182 !important; /* Deep LinkedIn Blue on Click */
+  background: rgba(0, 65, 130, 0.25) !important;
+  border-color: #004182 !important;
+  box-shadow: 0 2px 10px rgba(0, 65, 130, 0.7) !important;
+  transform: scale(0.94) !important;
+}
 .footer-col h5 {
   font-family: var(--font-display);
   color: var(--text-primary);
