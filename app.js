@@ -1003,8 +1003,9 @@ if (sendBtn) {
 
 
 /* ================= INTERACTIVE MASCOT CHARACTER SUBSYSTEM ================= */
-(function initMascotWidget() {
+function initMascotWidget() {
   if (document.getElementById("mascot-widget")) return;
+  if (!document.body) return;
 
   const path = location.pathname.split("/").pop() || "index.html";
 
@@ -1064,10 +1065,10 @@ if (sendBtn) {
   const wrap = document.getElementById("mascotWrap");
   const speech = document.getElementById("mascotSpeech");
 
-  // Show speech bubble after 1.5s
+  // Show speech bubble after 1s
   setTimeout(() => {
     speech?.classList.add("visible");
-  }, 1500);
+  }, 1000);
 
   // Mouse Parallax & Head Turn Effect
   window.addEventListener("mousemove", (e) => {
@@ -1079,7 +1080,7 @@ if (sendBtn) {
     const deltaX = (e.clientX - mascotCenterX) / window.innerWidth;
     const deltaY = (e.clientY - mascotCenterY) / window.innerHeight;
 
-    const rotateY = deltaX * 18; // Head/body turn towards mouse
+    const rotateY = deltaX * 18;
     const rotateX = -deltaY * 12;
 
     wrap.style.transform = `perspective(600px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
@@ -1092,7 +1093,6 @@ if (sendBtn) {
     const currentScrollY = window.scrollY;
     const delta = currentScrollY - lastScrollY;
 
-    // Slight corner tilt when scrolling fast
     const scrollTilt = Math.min(Math.max(delta * 0.15, -12), 12);
     mascotContainer.style.transform = `translateY(${scrollTilt * 0.5}px) rotate(${scrollTilt * 0.4}deg)`;
 
@@ -1101,9 +1101,9 @@ if (sendBtn) {
 
   // Click Interaction: High Jump + Random Fun Quote
   let quoteIndex = 0;
-  wrap.addEventListener("click", () => {
+  wrap?.addEventListener("click", () => {
     wrap.classList.remove("mascot-click-bounce");
-    void wrap.offsetWidth; // Trigger reflow
+    void wrap.offsetWidth;
     wrap.classList.add("mascot-click-bounce");
 
     quoteIndex = (quoteIndex + 1) % clickQuotes.length;
@@ -1116,7 +1116,12 @@ if (sendBtn) {
       wrap.classList.remove("mascot-click-bounce");
     }, 700);
   });
-})();
+}
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMascotWidget);
+} else {
+  initMascotWidget();
+}
 
 })();
