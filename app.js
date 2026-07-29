@@ -459,6 +459,16 @@ function animateCounters(entries, obs) {
 }
 const countObs = new IntersectionObserver(animateCounters, { threshold: 0.5 });
 $$(".count-up").forEach(el => countObs.observe(el));
+  // Horizontal Skill Bars Observer
+  const hbarObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const fill = e.target;
+      fill.style.width = fill.dataset.pct + "%";
+      hbarObs.unobserve(fill);
+    });
+  }, { threshold: 0.2 });
+  $$(".hbar-fill").forEach(el => hbarObs.observe(el));
 
 
 /* ---------- SCROLL REVEAL ---------- */
