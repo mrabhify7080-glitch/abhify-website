@@ -999,8 +999,128 @@ if (sendBtn) {
     const body  = `Hi AbhiFY!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(msg)}`;
     window.open(`https://wa.me/919569890314?text=${body}`, "_blank");
   });
+}/* ================= FOOTER CONSTELLATION MESH ANIMATION ================= */
+function initFooterMeshCanvas() {
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
+  // Create canvas if not existing
+  let canvas = document.getElementById("footerMeshCanvas");
+  if (!canvas) {
+    canvas = document.createElement("canvas");
+    canvas.id = "footerMeshCanvas";
+    canvas.className = "footer-mesh-canvas";
+    footer.insertBefore(canvas, footer.firstChild);
+  }
+
+  const ctx = canvas.getContext("2d");
+  let width, height;
+  let particles = [];
+  const particleCount = Math.min(Math.floor(window.innerWidth / 18), 75);
+  const connectionDist = 145;
+
+  let mouse = { x: -1000, y: -1000, radius: 190 };
+
+  function resize() {
+    width = canvas.width = footer.offsetWidth;
+    height = canvas.height = footer.offsetHeight;
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  footer.addEventListener("mousemove", (e) => {
+    const rect = footer.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  footer.addEventListener("mouseleave", () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.9;
+      this.vy = (Math.random() - 0.5) * 0.9;
+      this.radius = Math.random() * 2 + 1.8;
+      this.baseAlpha = Math.random() * 0.45 + 0.35;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Mouse interactive push/pull effect
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < mouse.radius) {
+        const force = (mouse.radius - dist) / mouse.radius;
+        this.x -= (dx / dist) * force * 1.6;
+        this.y -= (dy / dist) * force * 1.6;
+      }
+    }
+
+    draw() {
+      const isDark = document.body.classList.contains("dark") || document.documentElement.getAttribute("data-theme") === "dark";
+      const color = isDark ? "225, 185, 125" : "166, 124, 82";
+
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${color}, ${this.baseAlpha})`;
+      ctx.fill();
+    }
+  }
+
+  particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    const isDark = document.body.classList.contains("dark") || document.documentElement.getAttribute("data-theme") === "dark";
+    const lineColor = isDark ? "220, 180, 130" : "166, 124, 82";
+
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < connectionDist) {
+          const alpha = (1 - dist / connectionDist) * 0.38;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
+          ctx.lineWidth = 1.15;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
 
-
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initFooterMeshCanvas);
+} else {
+  initFooterMeshCanvas();
+}
 
 })();
