@@ -50,7 +50,7 @@
     <nav>
       <a href="index.html" class="logo"><span class="dot"></span><span class="logo-text">Abhi<span>FY</span></span></a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -67,7 +67,7 @@
 
 <div class="nav-overlay" id="navOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
+  <a href="index.html" class="active">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="portfolio.html">Portfolio</a>
@@ -83,20 +83,21 @@
   <div class="hero-grid"></div>
   <div class="glow-orb o1"></div>
   <div class="glow-orb o2"></div>
-  <div class="glow-orb o3"></div>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <span class="section-tag reveal in">Turning Strategy Into Measurable Growth</span>
+  
+  <div class="container hero-container">
+    <div class="hero-text">
+      <div class="tag-pill reveal"><span class="live-dot"></span> Digital Growth &amp; Strategy</div>
       <h1 class="hero-name reveal in"><span class="logo-text">Abhi<span>FY</span></span></h1>
-      <div class="hero-roles"><span id="typed-role"></span><span class="cursor-blink"></span></div>
-      <h2 class="hero-headline reveal in">Digital Marketing Built for Measurable Revenue</h2>
-      <p class="hero-desc reveal in">Empowering modern brands with data-driven SEO, Google Ads, Meta Ads, conversion-focused web design, and brand strategy.</p>
+      <p class="hero-role reveal in">I build <span id="typed-text"></span><span class="typed-cursor">|</span></p>
+      <p class="hero-sub reveal in">Turning Strategy Into Measurable Growth. Data-backed search engine optimization, performance ad campaigns, and high-converting Scandinavian minimal design.</p>
+      
       <div class="hero-btns reveal in">
-        <a href="contact.html" class="btn btn-primary rippleize"><i class="fa-solid fa-arrow-right"></i>Let's Grow</a>
-        <a href="portfolio.html" class="btn btn-outline rippleize"><i class="fa-solid fa-briefcase"></i>Explore Work</a>
+        <a href="services.html" class="btn btn-primary rippleize"><i class="fa-solid fa-bolt"></i>Explore Services</a>
+        <a href="contact.html" class="btn btn-outline rippleize"><i class="fa-solid fa-paper-plane"></i>Get Free Audit</a>
       </div>
+      
       <div class="hero-stats reveal in">
-        <div><b><span class="count-up" data-target="50">0</span>+</b><span>Projects</span></div>
+        <div><b><span class="count-up" data-target="50">0</span>+</b><span>Projects Completed</span></div>
         <div><b><span class="count-up" data-target="25">0</span>+</b><span>Happy Clients</span></div>
         <div><b><span class="count-up" data-target="3">0</span>+</b><span>Years Experience</span></div>
         <div><b><span class="count-up" data-target="100">0</span>%</b><span>Satisfaction</span></div>
@@ -117,113 +118,245 @@
   <div class="scroll-indicator"><div class="mouse"><i></i></div>Scroll</div>
 </section>
 
-<!-- ================= ABOUT PREVIEW ================= -->
-<section id="about" class="preview-section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="reveal-zoom">
-        <div class="about-img-wrap">
-          <div class="img-placeholder shimmer profile-bg-container">
-            <img src="profile.png" alt="About AbhiFY" class="about-profile-img">
-          </div>
-          <div class="about-badge">
-            <i class="fa-solid fa-award"></i>
-            <div><b>3+ Yrs</b><span>Learning &amp; Growing</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal">
-        <span class="section-tag">About AbhiFY</span>
-        <h2 class="section-title">Turning Strategy Into <span>Measurable Growth</span></h2>
-        <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:6px;">AbhiFY is a Scandinavian minimal digital marketing brand focused on helping businesses generate traffic, quality leads, and measurable revenue through modern marketing strategies.</p>
-        <ul class="about-list">
-          <li><i class="fa-solid fa-circle-check"></i>Search Engine Optimization (SEO)</li>
-          <li><i class="fa-solid fa-circle-check"></i>Google Ads &amp; Search Campaigns</li>
-          <li><i class="fa-solid fa-circle-check"></i>Meta Ads &amp; Retargeting Funnels</li>
-          <li><i class="fa-solid fa-circle-check"></i>High-Converting Web Design</li>
-          <li><i class="fa-solid fa-circle-check"></i>Social Media Marketing &amp; Reels</li>
-          <li><i class="fa-solid fa-circle-check"></i>Brand Strategy &amp; Identity</li>
-        </ul>
-        <a href="about.html" class="btn btn-outline rippleize" style="margin-top:24px;"><i class="fa-solid fa-arrow-right"></i>Learn More About Me</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SERVICES PREVIEW ================= -->
+<!-- ================= SECTION 1: OUR SERVICES ================= -->
 <section id="services" class="preview-section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">What I Do</span>
-      <h2 class="section-title">Services Built For <span>Real Growth</span></h2>
-      <p class="section-sub">A full-stack marketing &amp; design toolkit — from organic visibility to paid performance to conversion-focused web experiences.</p>
+      <span class="section-tag">Services Overview</span>
+      <h2 class="section-title">What We <span>Do</span></h2>
+      <p class="section-sub">End-to-end digital marketing solutions to help your business grow online, all under one roof.</p>
     </div>
-    <div class="preview-services-grid" id="previewServicesGrid"></div>
-    <div class="preview-more reveal">
-      <a href="services.html" class="btn btn-primary rippleize"><i class="fa-solid fa-arrow-right"></i>View All 11 Services</a>
+    <div class="preview-services-grid">
+      
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h3>Search Engine Optimization (SEO)</h3>
+        <p>Rank higher on Google and get discovered by customers who are actively searching for what you offer.</p>
+      </div>
+
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-brands fa-google"></i></div>
+        <h3>Google Ads Management</h3>
+        <p>Data-driven paid campaigns that bring in qualified leads and maximize your return on ad spend.</p>
+      </div>
+
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
+        <h3>Meta Ads (Facebook &amp; Instagram)</h3>
+        <p>Targeted social media advertising that puts your brand in front of the right audience at the right time.</p>
+      </div>
+
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
+        <h3>Social Media Marketing</h3>
+        <p>Consistent, engaging content and community management that builds a loyal audience around your brand.</p>
+      </div>
+
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Website Design &amp; Development</h3>
+        <p>Fast, modern, mobile-friendly websites that turn visitors into customers.</p>
+      </div>
+
+      <div class="service-card glass-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+        <h3>Graphic Design</h3>
+        <p>Eye-catching visuals for your brand, social media, and marketing campaigns that make you stand out.</p>
+      </div>
+
+    </div>
+    <div class="preview-more reveal" style="margin-top:40px;">
+      <a href="services.html" class="btn btn-outline rippleize"><i class="fa-solid fa-arrow-right"></i>View All Services</a>
     </div>
   </div>
 </section>
 
-<!-- ================= PROCESS TIMELINE ================= -->
+<!-- ================= SECTION 2: WHY CHOOSE ABHIFY ================= -->
+<section id="why-choose-us" style="background:linear-gradient(180deg, transparent, rgba(217, 197, 178, .12), transparent);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">The AbhiFY Advantage</span>
+      <h2 class="section-title">Why Businesses <span>Choose Us</span></h2>
+      <p class="section-sub">Here is what sets AbhiFY apart from traditional marketing agencies.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card glass-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h4>Fast Delivery</h4>
+        <p>We respect your timelines and deliver quality work without unnecessary delays.</p>
+      </div>
+      <div class="why-card glass-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h4>Data-Driven Approach</h4>
+        <p>Every decision is backed by analytics, not guesswork.</p>
+      </div>
+      <div class="why-card glass-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-coins"></i></div>
+        <h4>Affordable Pricing</h4>
+        <p>Premium quality marketing services designed to fit small business budgets.</p>
+      </div>
+      <div class="why-card glass-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+        <h4>Personal Support</h4>
+        <p>Direct access to your marketer, not a ticket queue. You'll always know who's working on your account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3: OUR PROCESS ================= -->
 <section id="process">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">6-Step Framework</span>
-      <h2 class="section-title">How We Drive <span>Predictable Results</span></h2>
-      <p class="section-sub">A proven growth process connecting discovery to optimization and scaling.</p>
+      <span class="section-tag">How We Work</span>
+      <h2 class="section-title">Our <span>Process</span></h2>
+      <p class="section-sub">A simple, transparent 4-step framework to take your business from strategy to growth.</p>
     </div>
-    <div class="process-grid" id="processGrid"></div>
+    <div class="why-grid" style="grid-template-columns:repeat(4, 1fr);">
+      
+      <div class="why-card glass-card reveal">
+        <div class="why-icon" style="font-family:var(--font-alt);font-weight:800;">01</div>
+        <h4>Discovery Call</h4>
+        <p>We start by understanding your business, goals, and target audience.</p>
+      </div>
+
+      <div class="why-card glass-card reveal">
+        <div class="why-icon" style="font-family:var(--font-alt);font-weight:800;">02</div>
+        <h4>Strategy &amp; Planning</h4>
+        <p>We build a custom marketing plan tailored to your budget and objectives.</p>
+      </div>
+
+      <div class="why-card glass-card reveal">
+        <div class="why-icon" style="font-family:var(--font-alt);font-weight:800;">03</div>
+        <h4>Execution</h4>
+        <p>Our team gets to work, whether it's running ads, optimizing your site, or creating content.</p>
+      </div>
+
+      <div class="why-card glass-card reveal">
+        <div class="why-icon" style="font-family:var(--font-alt);font-weight:800;">04</div>
+        <h4>Reporting &amp; Optimization</h4>
+        <p>You get regular, transparent reports, and we continuously refine the strategy based on real results.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- ================= FAQ SECTION ================= -->
-<section id="faq" class="preview-section">
+<!-- ================= SECTION 4: CLIENT TESTIMONIALS ================= -->
+<section id="testimonials" style="background:linear-gradient(180deg, transparent, rgba(166, 124, 82, .05), transparent);">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">Got Questions?</span>
-      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-      <p class="section-sub">Clear answers to help you understand our process and expected growth timelines.</p>
+      <span class="section-tag">Client Feedback</span>
+      <h2 class="section-title">What Our <span>Clients Say</span></h2>
+      <p class="section-sub">Real reviews from businesses that grew with our digital marketing services.</p>
     </div>
-    <div class="faq-wrap" id="faqWrap"></div>
-  </div>
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag">Get In Touch</span>
-      <h2 class="section-title">Let's Build Something <span>Great</span></h2>
-      <p class="section-sub">Have a project in mind? Send a message or reach out directly — replies within a day.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="contact-info-card glass-card">
-          <h4>Contact Information</h4>
-          <div class="contact-row"><i class="fa-solid fa-envelope"></i><div><b>Email</b><span>Abhishek</span></div></div>
-          <div class="contact-row"><i class="fa-solid fa-phone"></i><div><b>Phone</b><span>9569890314 / 7080630314</span></div></div>
-          <div class="contact-row"><i class="fa-brands fa-instagram"></i><div><b>Instagram</b><span>@abhify07</span></div></div>
-        </div>
-        <div class="map-placeholder">
-          <div class="img-placeholder shimmer">
-            <i class="fa-solid fa-map-location-dot ph-icon"></i>
-            <span class="ph-label">Office Image / Map</span>
+    <div class="services-grid" style="grid-template-columns:1fr 1fr;max-width:900px;margin:0 auto;">
+      
+      <div class="glass-card reveal" style="padding:36px;">
+        <div class="testi-stars" style="margin-bottom:14px;color:#D97706;">★★★★★</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--text-primary);margin-bottom:20px;">"Working with AbhiFY completely changed how we approach our online presence. Our website traffic and leads have grown significantly since we started working together."</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="img-placeholder shimmer" style="width:48px;height:48px;border-radius:50%;overflow:hidden;">
+            <i class="fa-solid fa-user ph-icon" style="font-size:18px;"></i>
+          </div>
+          <div>
+            <b style="font-family:var(--font-display);font-size:15px;color:var(--text-primary);display:block;">Rahul Sharma</b>
+            <span style="font-size:12.5px;color:var(--text-secondary);">Founder, Apex E-Com</span>
           </div>
         </div>
       </div>
-      <div class="form-card glass-card reveal">
-        <div class="form-group"><label>Name</label><input type="text" placeholder="Your full name"></div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 00000 00000"></div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
-        <div class="form-btns">
-          <button class="btn btn-primary rippleize" type="button" id="sendMsgBtn"><i class="fa-solid fa-paper-plane"></i>Send Message</button>
-          <a href="https://wa.me/919569890314" target="_blank" class="btn btn-outline rippleize"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-          <a href="tel:9569890314" class="btn btn-outline rippleize"><i class="fa-solid fa-phone"></i>Call Now</a>
+
+      <div class="glass-card reveal" style="padding:36px;">
+        <div class="testi-stars" style="margin-bottom:14px;color:#D97706;">★★★★★</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--text-primary);margin-bottom:20px;">"Clear communication, fast turnaround, and real results. AbhiFY understood exactly what our brand needed."</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="img-placeholder shimmer" style="width:48px;height:48px;border-radius:50%;overflow:hidden;">
+            <i class="fa-solid fa-user ph-icon" style="font-size:18px;"></i>
+          </div>
+          <div>
+            <b style="font-family:var(--font-display);font-size:15px;color:var(--text-primary);display:block;">Priya Patel</b>
+            <span style="font-size:12.5px;color:var(--text-secondary);">Director, StyleHive</span>
+          </div>
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 5: FREQUENTLY ASKED QUESTIONS ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Got Questions?</span>
+      <h2 class="section-title">We've Got <span>Answers</span></h2>
+      <p class="section-sub">Everything you need to know about working with AbhiFY.</p>
+    </div>
+    
+    <div class="faq-wrap" style="max-width:820px;margin:0 auto;">
+      
+      <div class="faq-item glass-card reveal">
+        <div class="faq-question">
+          <span>How long does it take to see results from SEO?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Most businesses start seeing meaningful movement within 3 to 6 months, with stronger results building over time as the strategy compounds.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card reveal">
+        <div class="faq-question">
+          <span>Do you work with small and new businesses?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we work with businesses of all sizes, including startups just getting started with their online presence.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card reveal">
+        <div class="faq-question">
+          <span>What makes AbhiFY different from other agencies?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We combine data-driven strategy with personal, hands-on support, so you always know exactly what's being done and why.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card reveal">
+        <div class="faq-question">
+          <span>Can I get a custom package instead of a fixed plan?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. We tailor our services based on your specific goals and budget.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card reveal">
+        <div class="faq-question">
+          <span>How do I get started?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Simply reach out through our contact page or book a free discovery call, and we'll take it from there.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 6: FINAL CTA BANNER ================= -->
+<section id="cta-banner" style="padding:80px 0;">
+  <div class="container">
+    <div class="footer-cta-box glass-card reveal" style="margin-bottom:0;">
+      <span class="section-tag">Let's Connect</span>
+      <h2>Ready to Grow Your Business <span>Online</span>?</h2>
+      <p style="font-size:16px;color:var(--text-secondary);margin-bottom:28px;">Let's build a marketing strategy that actually delivers results, tailored to your goals and budget.</p>
+      <a href="contact.html" class="btn btn-primary rippleize"><i class="fa-solid fa-paper-plane"></i>Get a Free Consultation &rarr;</a>
     </div>
   </div>
 </section>
@@ -231,13 +364,6 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
-    <div class="footer-cta-box glass-card reveal">
-      <span class="section-tag">Ready To Scale?</span>
-      <h2>Ready To Grow Your Brand With <span>AbhiFY</span>?</h2>
-      <p style="font-size:16px;color:var(--text-secondary);margin-bottom:28px;">Let's discuss your project and create a custom growth strategy.</p>
-      <a href="contact.html" class="btn btn-primary rippleize"><i class="fa-solid fa-arrow-right"></i>Let's Grow Today</a>
-    </div>
-    
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo-box"><i class="fa-solid fa-bolt ph-icon" style="font-size:20px;color:var(--btn-primary)"></i></div>
