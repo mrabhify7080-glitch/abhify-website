@@ -972,7 +972,6 @@ if (parallaxImg) {
     "services.html": "Services",
     "portfolio.html": "Portfolio",
     "social-media.html": "Social Media",
-    "testimonials.html": "Testimonials",
     "gallery.html": "Gallery",
     "contact.html": "Contact"
   };
