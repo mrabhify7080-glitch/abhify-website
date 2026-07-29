@@ -626,7 +626,26 @@ if (pricingGrid) {
 }
 
 
-/* ---------- RENDER: SKILLS ---------- */
+/* ---------- BLOG CATEGORY FILTER ---------- */
+
+const blogTabs = $$(".blog-tab");
+const blogCards = $$(".blog-card");
+if (blogTabs.length > 0) {
+  blogTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      blogTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const cat = tab.dataset.cat;
+      blogCards.forEach(card => {
+        if (cat === "all" || card.dataset.cat === cat) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}
 
 const skillsGrid = $("#skillsGrid");
 if (skillsGrid) {
