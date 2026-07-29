@@ -3281,6 +3281,41 @@ footer {
 .nav-overlay.open {
   opacity: 1;
   visibility: visible;
+/* ---------- HERO CARTOON MASCOT COMPANION ---------- */
+.hero-mascot-companion {
+  position: absolute;
+  bottom: -25px;
+  right: -55px;
+  width: 175px;
+  z-index: 12;
+  pointer-events: auto;
+  filter: drop-shadow(0 14px 28px rgba(166, 124, 82, 0.45));
+  animation: heroMascotFloat 4s ease-in-out infinite alternate;
+}
+
+.hero-mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-mascot-companion:hover .hero-mascot-img {
+  transform: scale(1.12) rotate(4deg);
+}
+
+@keyframes heroMascotFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(-2deg); }
+}
+
+@media(max-width: 768px) {
+  .hero-mascot-companion {
+    width: 125px;
+    right: -15px;
+    bottom: -15px;
+  }
 }
 
 /* ================= CARTOON MASCOT WIDGET ================= */
