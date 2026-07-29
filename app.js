@@ -1002,4 +1002,121 @@ if (sendBtn) {
 }
 
 
+/* ================= INTERACTIVE MASCOT CHARACTER SUBSYSTEM ================= */
+(function initMascotWidget() {
+  if (document.getElementById("mascot-widget")) return;
+
+  const path = location.pathname.split("/").pop() || "index.html";
+
+  // Speech bubble messages per page
+  const pageMessages = {
+    "index.html": "Welcome to AbhiFY! 🚀 Ready to grow your business?",
+    "": "Welcome to AbhiFY! 🚀 Ready to grow your business?",
+    "about.html": "Hey! 👋 Learn how AbhiFY turns strategy into ROI!",
+    "services.html": "Explore our SEO, Ads & Web Design services below! ⚡",
+    "portfolio.html": "Check out our high-impact client success case studies! 🏆",
+    "blog.html": "Read our latest digital marketing & SEO insights! 💡",
+    "blog-seo-small-business.html": "SEO tips to rank #1 on Google without a huge ad budget! 🎯",
+    "gallery.html": "Browse our creative design & branding portfolio! 🎨",
+    "contact.html": "Got a project in mind? Send us a message or WhatsApp! 📱"
+  };
+
+  // Animation class map per page
+  const pageAnimMap = {
+    "index.html": "anim-index",
+    "": "anim-index",
+    "about.html": "anim-about",
+    "services.html": "anim-services",
+    "portfolio.html": "anim-portfolio",
+    "blog.html": "anim-blog",
+    "blog-seo-small-business.html": "anim-blog",
+    "gallery.html": "anim-gallery",
+    "contact.html": "anim-contact"
+  };
+
+  // Click reaction quotes
+  const clickQuotes = [
+    "Boom! 💥 Let's scale your business together!",
+    "Scandinavian Minimal Design + Data-Driven Marketing! ✨",
+    "Fun Fact: +340% average ROAS boost for our clients! 📈",
+    "Got questions? Click 'Let's Grow' or chat on WhatsApp! 💬",
+    "AbhiFY — Where Ideas Become Digital Success! 🌟"
+  ];
+
+  // Inject mascot HTML into body
+  const mascotContainer = document.createElement("div");
+  mascotContainer.id = "mascot-widget";
+  mascotContainer.className = "mascot-container";
+
+  const animClass = pageAnimMap[path] || "anim-index";
+  const defaultMsg = pageMessages[path] || "Hey there! Need help growing your brand? 🚀";
+
+  mascotContainer.innerHTML = `
+    <div class="mascot-speech-bubble" id="mascotSpeech">${defaultMsg}</div>
+    <div class="mascot-img-wrap ${animClass}" id="mascotWrap">
+      <img src="character.png" alt="AbhiFY Mascot" class="mascot-character-img" id="mascotImg">
+      <div class="mascot-shadow"></div>
+    </div>
+  `;
+
+  document.body.appendChild(mascotContainer);
+
+  const wrap = document.getElementById("mascotWrap");
+  const speech = document.getElementById("mascotSpeech");
+
+  // Show speech bubble after 1.5s
+  setTimeout(() => {
+    speech?.classList.add("visible");
+  }, 1500);
+
+  // Mouse Parallax & Head Turn Effect
+  window.addEventListener("mousemove", (e) => {
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const mascotCenterX = rect.left + rect.width / 2;
+    const mascotCenterY = rect.top + rect.height / 2;
+
+    const deltaX = (e.clientX - mascotCenterX) / window.innerWidth;
+    const deltaY = (e.clientY - mascotCenterY) / window.innerHeight;
+
+    const rotateY = deltaX * 18; // Head/body turn towards mouse
+    const rotateX = -deltaY * 12;
+
+    wrap.style.transform = `perspective(600px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+  });
+
+  // Scroll position shift & tilt animation
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if (!wrap) return;
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    // Slight corner tilt when scrolling fast
+    const scrollTilt = Math.min(Math.max(delta * 0.15, -12), 12);
+    mascotContainer.style.transform = `translateY(${scrollTilt * 0.5}px) rotate(${scrollTilt * 0.4}deg)`;
+
+    lastScrollY = currentScrollY;
+  });
+
+  // Click Interaction: High Jump + Random Fun Quote
+  let quoteIndex = 0;
+  wrap.addEventListener("click", () => {
+    wrap.classList.remove("mascot-click-bounce");
+    void wrap.offsetWidth; // Trigger reflow
+    wrap.classList.add("mascot-click-bounce");
+
+    quoteIndex = (quoteIndex + 1) % clickQuotes.length;
+    if (speech) {
+      speech.textContent = clickQuotes[quoteIndex];
+      speech.classList.add("visible");
+    }
+
+    setTimeout(() => {
+      wrap.classList.remove("mascot-click-bounce");
+    }, 700);
+  });
+})();
+
+
 })();
