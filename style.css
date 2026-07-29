@@ -3281,43 +3281,6 @@ footer {
 .nav-overlay.open {
   opacity: 1;
   visibility: visible;
-/* ---------- HERO CARTOON MASCOT COMPANION ---------- */
-.hero-mascot-companion {
-  position: absolute;
-  bottom: -25px;
-  right: -55px;
-  width: 175px;
-  z-index: 12;
-  pointer-events: auto;
-  filter: drop-shadow(0 14px 28px rgba(166, 124, 82, 0.45));
-  animation: heroMascotFloat 4s ease-in-out infinite alternate;
-}
-
-.hero-mascot-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-mascot-companion:hover .hero-mascot-img {
-  transform: scale(1.12) rotate(4deg);
-}
-
-@keyframes heroMascotFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-14px) rotate(3deg); }
-  100% { transform: translateY(0px) rotate(-2deg); }
-}
-
-@media(max-width: 768px) {
-  .hero-mascot-companion {
-    width: 125px;
-    right: -15px;
-    bottom: -15px;
-  }
-}
-
 /* ================= CARTOON MASCOT WIDGET ================= */
 .mascot-container {
   position: fixed;
@@ -3330,7 +3293,26 @@ footer {
   pointer-events: auto;
   user-select: none;
   perspective: 800px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.3s ease;
+  animation: mascotWalkPatrol 14s ease-in-out infinite;
+}
+
+@keyframes mascotWalkPatrol {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  45% {
+    transform: translateX(-220px) scaleX(1);
+  }
+  50% {
+    transform: translateX(-220px) scaleX(-1); /* Turn around */
+  }
+  95% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1); /* Turn around */
+  }
 }
 
 .mascot-speech-bubble {
@@ -3377,7 +3359,7 @@ footer {
 
 .mascot-img-wrap {
   position: relative;
-  width: 145px;
+  width: 125px;
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3410,6 +3392,18 @@ footer {
 @keyframes mascotShadowPulse {
   0% { transform: scale(0.9); opacity: 0.5; }
   100% { transform: scale(1.15); opacity: 0.8; }
+}
+
+/* Scroll Jump Animation Trigger */
+.mascot-scroll-jump {
+  animation: mascotScrollJump 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+@keyframes mascotScrollJump {
+  0% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-35px) scale(1.08) rotate(-4deg); }
+  65% { transform: translateY(-12px) scale(1.02) rotate(3deg); }
+  100% { transform: translateY(0) scale(1); }
 }
 
 /* Page Specific Animations */

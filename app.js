@@ -1086,17 +1086,19 @@ function initMascotWidget() {
     wrap.style.transform = `perspective(600px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
   });
 
-  // Scroll position shift & tilt animation
-  let lastScrollY = window.scrollY;
+  // Scroll Jump Interaction: Jump high whenever user scrolls
+  let isScrollingTimer;
   window.addEventListener("scroll", () => {
     if (!wrap) return;
-    const currentScrollY = window.scrollY;
-    const delta = currentScrollY - lastScrollY;
+    
+    if (!wrap.classList.contains("mascot-scroll-jump")) {
+      wrap.classList.add("mascot-scroll-jump");
+    }
 
-    const scrollTilt = Math.min(Math.max(delta * 0.15, -12), 12);
-    mascotContainer.style.transform = `translateY(${scrollTilt * 0.5}px) rotate(${scrollTilt * 0.4}deg)`;
-
-    lastScrollY = currentScrollY;
+    clearTimeout(isScrollingTimer);
+    isScrollingTimer = setTimeout(() => {
+      wrap.classList.remove("mascot-scroll-jump");
+    }, 650);
   });
 
   // Click Interaction: High Jump + Random Fun Quote
