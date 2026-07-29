@@ -444,13 +444,79 @@ nav {
   color: var(--text-primary);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   letter-spacing: -0.03em;
+  text-decoration: none;
 }
 .logo-text {
   display: inline-block;
   white-space: nowrap;
 }
+.brand-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--btn-primary);
+  box-shadow: 0 4px 14px rgba(166, 124, 82, 0.35);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  flex-shrink: 0;
+  display: block;
+}
+.logo:hover .brand-logo-img {
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 6px 20px rgba(166, 124, 82, 0.55);
+  border-color: var(--accent-light);
+}
+
+.footer-logo-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--btn-primary), var(--accent-light));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(166, 124, 82, 0.25);
+  margin-bottom: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.footer-logo-box:hover {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 8px 24px rgba(166, 124, 82, 0.45);
+}
+.footer-logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.preloader-logo-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--btn-primary), var(--accent-light));
+  box-shadow: 0 0 30px rgba(166, 124, 82, 0.45);
+  animation: preloaderLogoPulse 2.5s ease-in-out infinite alternate;
+}
+.preloader-logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@keyframes preloaderLogoPulse {
+  0% { transform: scale(0.96); box-shadow: 0 0 20px rgba(166, 124, 82, 0.3); }
+  100% { transform: scale(1.05); box-shadow: 0 0 40px rgba(166, 124, 82, 0.75), 0 0 15px rgba(217, 197, 178, 0.5); }
+}
+
 .logo .dot {
   width: 10px;
   height: 10px;
