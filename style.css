@@ -443,7 +443,23 @@ nav {
   align-items: center;
   text-decoration: none;
   position: relative;
-  padding: 2px;
+  padding: 4px;
+}
+
+/* Spinning Golden Orbital Dashed Ring */
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(166, 124, 82, 0.7);
+  animation: logoOrbitalSpin 14s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes logoOrbitalSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .brand-logo-img {
@@ -456,24 +472,31 @@ nav {
   transition: width 0.35s ease, height 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.45s ease, filter 0.45s ease;
   flex-shrink: 0;
   display: block;
-  animation: logoGlowPulse 3.5s ease-in-out infinite alternate;
+  animation: logoFloatGlow 4s ease-in-out infinite alternate;
 }
 
-@keyframes logoGlowPulse {
+@keyframes logoFloatGlow {
   0% {
-    box-shadow: 0 8px 28px rgba(166, 124, 82, 0.42), 0 0 16px rgba(217, 197, 178, 0.3);
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: 0 8px 26px rgba(166, 124, 82, 0.42), 0 0 16px rgba(217, 197, 178, 0.3);
     border-color: var(--btn-primary);
   }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 14px 36px rgba(166, 124, 82, 0.75), 0 0 28px rgba(217, 197, 178, 0.55);
+    border-color: #E6C594;
+  }
   100% {
-    box-shadow: 0 10px 36px rgba(166, 124, 82, 0.75), 0 0 30px rgba(217, 197, 178, 0.55);
-    border-color: var(--accent-light);
+    transform: translateY(0px) rotate(-1deg);
+    box-shadow: 0 8px 26px rgba(166, 124, 82, 0.42), 0 0 16px rgba(217, 197, 178, 0.3);
+    border-color: var(--btn-primary);
   }
 }
 
 .logo:hover .brand-logo-img {
-  transform: scale(1.1) rotate(4deg);
+  transform: scale(1.12) rotate(4deg);
   border-color: #E6C594;
-  box-shadow: 0 12px 42px rgba(166, 124, 82, 0.9), 0 0 38px rgba(230, 197, 148, 0.85);
+  box-shadow: 0 14px 44px rgba(166, 124, 82, 0.95), 0 0 40px rgba(230, 197, 148, 0.9);
   filter: brightness(1.12);
 }
 
@@ -490,13 +513,18 @@ header.scrolled .brand-logo-img {
   padding: 4px;
   background: linear-gradient(135deg, var(--btn-primary), var(--accent-light), var(--btn-primary));
   background-size: 200% 200%;
-  animation: footerLogoGrad 6s linear infinite;
+  animation: footerLogoGrad 6s linear infinite, logoFooterFloat 4.5s ease-in-out infinite alternate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 12px 35px rgba(166, 124, 82, 0.45);
   margin-bottom: 22px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+@keyframes logoFooterFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-6px); }
 }
 
 @keyframes footerLogoGrad {
@@ -506,8 +534,8 @@ header.scrolled .brand-logo-img {
 }
 
 .footer-logo-box:hover {
-  transform: scale(1.1) rotate(-4deg);
-  box-shadow: 0 16px 45px rgba(166, 124, 82, 0.7);
+  transform: scale(1.12) rotate(-4deg);
+  box-shadow: 0 18px 50px rgba(166, 124, 82, 0.75);
 }
 
 .footer-logo-img {
