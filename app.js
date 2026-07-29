@@ -264,38 +264,29 @@ function el(tag, attrs = {}, children = []) {
   const preloaderPct  = $("#preloaderPct");
   const preCanvas     = $("#preloader-particles");
   const loader        = $("#loader");
-  let progress = 0;
-  let isLoaded = false;
+  
+  const DURATION = 2000; // Exactly 2.0 seconds
+  const startTime = performance.now();
 
-  // Counter Animation
-  const timer = setInterval(() => {
-    if (progress < 90) {
-      progress += Math.floor(Math.random() * 8) + 3;
-      if (progress > 90) progress = 90;
-    } else if (isLoaded) {
-      progress += 5;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(timer);
-        setTimeout(() => {
-          if (loader) loader.classList.add("hide");
-        }, 300);
-      }
-    }
+  function updateProgress(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(Math.floor((elapsed / DURATION) * 100), 100);
+
     if (preloaderFill) preloaderFill.style.width = progress + "%";
     if (preloaderPct)  preloaderPct.textContent  = progress + "%";
-  }, 40);
 
-  window.addEventListener("load", () => {
-    isLoaded = true;
-  });
+    if (progress < 100) {
+      requestAnimationFrame(updateProgress);
+    } else {
+      setTimeout(() => {
+        if (loader) loader.classList.add("hide");
+      }, 150);
+    }
+  }
 
-  // Fallback max 3 seconds
-  setTimeout(() => {
-    isLoaded = true;
-  }, 2500);
+  requestAnimationFrame(updateProgress);
 
-  // Red Particles Engine
+  // Particles Engine
   if (preCanvas) {
     const ctx = preCanvas.getContext("2d");
     let pList = [];
@@ -313,7 +304,7 @@ function el(tag, attrs = {}, children = []) {
         r: Math.random() * 2 + 1,
         vx: (Math.random() - 0.5) * 0.6,
         vy: (Math.random() - 0.5) * 0.6,
-        alpha: Math.random() * 0.6 + 0.2
+        alpha: Math.random() * 0.5 + 0.15
       });
     }
 
@@ -328,7 +319,7 @@ function el(tag, attrs = {}, children = []) {
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(166, 124, 82, ${p.alpha})`;
         ctx.shadowColor = "#A67C52";
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 6;
         ctx.fill();
       });
       requestAnimationFrame(animPreParticles);
