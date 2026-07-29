@@ -479,6 +479,17 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 $$(".reveal, .reveal-zoom").forEach(el => revealObs.observe(el));
 
+/* ---------- FAQ ACCORDION TOGGLE ---------- */
+document.addEventListener("click", e => {
+  const q = e.target.closest(".faq-question");
+  if (!q) return;
+  const item = q.closest(".faq-item");
+  if (!item) return;
+  const isOpen = item.classList.contains("active");
+  $$(".faq-item").forEach(el => el.classList.remove("active"));
+  if (!isOpen) item.classList.add("active");
+});
+
 
 /* ---------- PARTICLES (Warm Champagne) ---------- */
 
