@@ -326,8 +326,8 @@ function el(tag, attrs = {}, children = []) {
         if (p.y < 0 || p.y > preCanvas.height) p.vy *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 30, 30, ${p.alpha})`;
-        ctx.shadowColor = "#FF1E1E";
+        ctx.fillStyle = `rgba(166, 124, 82, ${p.alpha})`;
+        ctx.shadowColor = "#A67C52";
         ctx.shadowBlur = 8;
         ctx.fill();
       });

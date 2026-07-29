@@ -151,7 +151,7 @@ section {
 #loader {
   position: fixed;
   inset: 0;
-  background: #0B0B0B;
+  background: #0D0B0A;
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -182,7 +182,7 @@ section {
   inset: 0;
   z-index: 0;
   opacity: 0.12;
-  background-image: linear-gradient(rgba(255, 30, 30, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 30, 30, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(166, 124, 82, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(166, 124, 82, 0.25) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 .preloader-beam {
@@ -190,7 +190,7 @@ section {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 30, 30, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(166, 124, 82, 0.22) 0%, transparent 70%);
   filter: blur(80px);
   top: 50%;
   left: 50%;
@@ -242,8 +242,8 @@ section {
 .p-letter:nth-child(6) { animation-delay: 0.8s; }
 
 .p-red {
-  color: #FF1E1E !important;
-  text-shadow: 0 0 25px rgba(255, 30, 30, 0.85), 0 0 45px rgba(255, 30, 30, 0.4);
+  color: #A67C52 !important;
+  text-shadow: 0 0 25px rgba(166, 124, 82, 0.85), 0 0 45px rgba(217, 197, 178, 0.4);
 }
 
 @keyframes letterReveal {
@@ -259,12 +259,12 @@ section {
   top: -10px;
   left: -20px;
   font-size: 20px;
-  color: #FF1E1E;
+  color: #A67C52;
   opacity: 0;
   z-index: 4;
   animation: planeFly 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   animation-delay: 0.95s;
-  filter: drop-shadow(0 0 12px #FF1E1E);
+  filter: drop-shadow(0 0 12px #A67C52);
 }
 .plane-trail {
   position: absolute;
@@ -273,8 +273,8 @@ section {
   right: 18px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(90deg, transparent, rgba(255, 30, 30, 0.8));
-  border-top: 1.5px dashed #FF1E1E;
+  background: linear-gradient(90deg, transparent, rgba(166, 124, 82, 0.8));
+  border-top: 1.5px dashed #A67C52;
 }
 @keyframes planeFly {
   0% {
@@ -294,7 +294,7 @@ section {
 .scan-beam {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 30, 30, 0.5) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(166, 124, 82, 0.5) 50%, transparent 100%);
   width: 80px;
   height: 100%;
   transform: skewX(-20deg) translateX(-180px);
@@ -312,7 +312,7 @@ section {
 .preloader-tagline {
   font-family: var(--font-alt);
   font-size: 14px;
-  color: #B8C0D4;
+  color: #D9C5B2;
   letter-spacing: 0.12em;
   opacity: 0;
   transform: translateY(10px);
@@ -345,16 +345,16 @@ section {
 .preloader-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #FF1E1E, #FF5555);
+  background: linear-gradient(90deg, #A67C52, #D9C5B2);
   border-radius: 100px;
-  box-shadow: 0 0 12px #FF1E1E;
+  box-shadow: 0 0 12px #A67C52;
   transition: width 0.1s linear;
 }
 .preloader-pct {
   font-family: var(--font-alt);
   font-size: 12px;
   font-weight: 700;
-  color: #FF1E1E;
+  color: #A67C52;
   letter-spacing: 0.08em;
 }
 
