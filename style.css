@@ -447,12 +447,12 @@ nav {
 }
 
 .brand-logo-img {
-  width: 76px;
-  height: 76px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2.5px solid var(--btn-primary);
-  box-shadow: 0 6px 22px rgba(166, 124, 82, 0.45), 0 0 16px rgba(217, 197, 178, 0.3);
+  border: 3px solid var(--btn-primary);
+  box-shadow: 0 8px 28px rgba(166, 124, 82, 0.5), 0 0 20px rgba(217, 197, 178, 0.35);
   transition: width 0.35s ease, height 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.45s ease, filter 0.45s ease;
   flex-shrink: 0;
   display: block;
@@ -461,31 +461,31 @@ nav {
 
 @keyframes logoGlowPulse {
   0% {
-    box-shadow: 0 6px 22px rgba(166, 124, 82, 0.38), 0 0 12px rgba(217, 197, 178, 0.25);
+    box-shadow: 0 8px 28px rgba(166, 124, 82, 0.42), 0 0 16px rgba(217, 197, 178, 0.3);
     border-color: var(--btn-primary);
   }
   100% {
-    box-shadow: 0 8px 30px rgba(166, 124, 82, 0.7), 0 0 25px rgba(217, 197, 178, 0.5);
+    box-shadow: 0 10px 36px rgba(166, 124, 82, 0.75), 0 0 30px rgba(217, 197, 178, 0.55);
     border-color: var(--accent-light);
   }
 }
 
 .logo:hover .brand-logo-img {
-  transform: scale(1.12) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
   border-color: #E6C594;
-  box-shadow: 0 10px 36px rgba(166, 124, 82, 0.85), 0 0 32px rgba(230, 197, 148, 0.75);
-  filter: brightness(1.1);
+  box-shadow: 0 12px 42px rgba(166, 124, 82, 0.9), 0 0 38px rgba(230, 197, 148, 0.85);
+  filter: brightness(1.12);
 }
 
 header.scrolled .brand-logo-img {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
 }
 
 /* Footer Logo Styling */
 .footer-logo-box {
-  width: 96px;
-  height: 96px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, var(--btn-primary), var(--accent-light), var(--btn-primary));
@@ -494,8 +494,8 @@ header.scrolled .brand-logo-img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(166, 124, 82, 0.4);
-  margin-bottom: 20px;
+  box-shadow: 0 12px 35px rgba(166, 124, 82, 0.45);
+  margin-bottom: 22px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
@@ -506,8 +506,8 @@ header.scrolled .brand-logo-img {
 }
 
 .footer-logo-box:hover {
-  transform: scale(1.12) rotate(-4deg);
-  box-shadow: 0 14px 40px rgba(166, 124, 82, 0.65);
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 16px 45px rgba(166, 124, 82, 0.7);
 }
 
 .footer-logo-img {
@@ -521,14 +521,14 @@ header.scrolled .brand-logo-img {
 /* Preloader Logo Styling */
 .preloader-logo-wrap {
   position: relative;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 28px auto;
+  width: 195px;
+  height: 195px;
+  margin: 0 auto 30px auto;
   border-radius: 50%;
-  padding: 5px;
+  padding: 6px;
   background: linear-gradient(135deg, var(--btn-primary), var(--accent-light), var(--btn-hover));
   background-size: 200% 200%;
-  box-shadow: 0 0 60px rgba(166, 124, 82, 0.6);
+  box-shadow: 0 0 70px rgba(166, 124, 82, 0.65);
   animation: preloaderLogoPulse 3s ease-in-out infinite alternate, preloaderGrad 5s linear infinite;
 }
 @keyframes preloaderGrad {
@@ -544,8 +544,8 @@ header.scrolled .brand-logo-img {
   display: block;
 }
 @keyframes preloaderLogoPulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 30px rgba(166, 124, 82, 0.4); }
-  100% { transform: scale(1.08); box-shadow: 0 0 70px rgba(166, 124, 82, 0.9), 0 0 35px rgba(217, 197, 178, 0.7); }
+  0% { transform: scale(0.95); box-shadow: 0 0 35px rgba(166, 124, 82, 0.45); }
+  100% { transform: scale(1.07); box-shadow: 0 0 80px rgba(166, 124, 82, 0.95), 0 0 40px rgba(217, 197, 178, 0.75); }
 }
 
 .logo .dot {
