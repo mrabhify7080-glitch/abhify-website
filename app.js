@@ -264,6 +264,7 @@ function el(tag, attrs = {}, children = []) {
   const preloaderPct  = $("#preloaderPct");
   const preCanvas     = $("#preloader-particles");
   const loader        = $("#loader");
+  if (!loader) return;
   
   const DURATION = 2000; // Exactly 2.0 seconds
   const startTime = performance.now();
