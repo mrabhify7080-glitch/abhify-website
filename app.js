@@ -279,12 +279,23 @@ function el(tag, attrs = {}, children = []) {
       requestAnimationFrame(updateProgress);
     } else {
       setTimeout(() => {
-        if (loader) loader.classList.add("hide");
+        if (loader) {
+          loader.classList.add("hide");
+          setTimeout(() => { loader.style.display = "none"; }, 500);
+        }
       }, 150);
     }
   }
 
   requestAnimationFrame(updateProgress);
+
+  // Safety fallback for mobile
+  setTimeout(() => {
+    if (loader && !loader.classList.contains("hide")) {
+      loader.classList.add("hide");
+      setTimeout(() => { loader.style.display = "none"; }, 500);
+    }
+  }, 2200);
 
   // Particles Engine
   if (preCanvas) {

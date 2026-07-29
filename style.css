@@ -164,7 +164,8 @@ section {
   opacity: 0;
   transform: scale(0.95);
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: none !important;
+  display: none;
 }
 .preloader-bg {
   position: absolute;
