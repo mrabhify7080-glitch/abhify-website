@@ -1,5 +1,5 @@
 /* ============================================================
-   AbhiFY — app.js  •  Full interactive engine
+   AbhiFY — app.js  •  Futuristic AI Agency Engine
    ============================================================ */
 (() => {
 "use strict";
@@ -11,10 +11,70 @@ const SERVICES = [
   { icon:"fa-brands fa-google", title:"Google Ads", desc:"Search, Display, Shopping & YouTube campaigns optimised for maximum ROAS and lead quality." },
   { icon:"fa-brands fa-meta", title:"Meta Ads", desc:"High-converting Facebook & Instagram campaigns — from creatives to lookalike audiences." },
   { icon:"fa-solid fa-laptop-code", title:"Website Design", desc:"Modern, responsive, conversion-focused websites built with clean code and premium UI/UX." },
-  { icon:"fa-solid fa-palette", title:"Graphic Design", desc:"Eye-catching social media posts, banners, logos & brand kits that stand out." },
-  { icon:"fa-solid fa-bullhorn", title:"Content Marketing", desc:"Blog posts, ad copy, email sequences and content calendars that engage and convert." },
-  { icon:"fa-solid fa-chart-pie", title:"Analytics & Reporting", desc:"Google Analytics, Tag Manager, custom dashboards — track everything, waste nothing." },
-  { icon:"fa-solid fa-rocket", title:"Performance Marketing", desc:"End-to-end funnel strategy, A/B testing, CRO and ROI-driven growth campaigns." }
+  { icon:"fa-solid fa-hashtag", title:"Social Media Marketing", desc:"Content creation, reels, community growth and strategic brand positioning across platforms." },
+  { icon:"fa-solid fa-palette", title:"Branding", desc:"Eye-catching brand identities, typography, color systems, logos & digital design kits." },
+  { icon:"fa-solid fa-chart-pie", title:"Analytics & CRO", desc:"Google Analytics, Tag Manager, custom dashboards — track metrics and optimize conversions." },
+  { icon:"fa-solid fa-envelope-open-text", title:"Email Marketing", desc:"High-converting email sequences, automated funnels, newsletter design and retention loops." },
+  { icon:"fa-solid fa-clapperboard", title:"Video Editing", desc:"High-engagement video shorts, reels, ad creatives, motion graphics and promotional videos." }
+];
+
+const PROCESS_STEPS = [
+  { num:"01", title:"Discovery", desc:"Understanding your brand goals, target audience, competitive landscape, and growth KPIs." },
+  { num:"02", title:"Research", desc:"In-depth keyword auditing, audience behavior analysis, and ad creative benchmarking." },
+  { num:"03", title:"Strategy", desc:"Crafting a custom data-driven marketing blueprint tailored for high ROI and scale." },
+  { num:"04", title:"Execution", desc:"Building high-converting assets, launching campaigns, and deploying website improvements." },
+  { num:"05", title:"Optimization", desc:"Continuous A/B testing, bid management, CRO tweaks, and funnel refining." },
+  { num:"06", title:"Scaling", desc:"Expanding reach, scaling profitable ad spend, and driving predictable monthly revenue." }
+];
+
+const PRICING_PLANS = [
+  {
+    name: "Starter",
+    price: "₹19,999",
+    period: "/month",
+    desc: "Essential marketing & search visibility for growing startups.",
+    featured: false,
+    badge: "Essential",
+    features: [
+      "On-Page & Technical SEO",
+      "Social Media Management (12 Posts)",
+      "Google Business Profile Setup",
+      "Monthly Performance Dashboard",
+      "Email Support"
+    ]
+  },
+  {
+    name: "Growth",
+    price: "₹49,999",
+    period: "/month",
+    desc: "Full-funnel digital marketing & paid performance to scale revenue.",
+    featured: true,
+    badge: "Most Popular",
+    features: [
+      "Everything in Starter",
+      "Google Ads & Meta Ads Management",
+      "Conversion Rate Optimization (CRO)",
+      "High-Converting Landing Page Design",
+      "24/7 Dedicated Account Manager",
+      "Weekly ROI & Lead Reports"
+    ]
+  },
+  {
+    name: "Premium",
+    price: "₹89,999",
+    period: "/month",
+    desc: "Complete enterprise marketing takeover & custom branding.",
+    featured: false,
+    badge: "Enterprise",
+    features: [
+      "Everything in Growth",
+      "Full Custom Website / App Redesign",
+      "Video Editing & Ad Creative Production",
+      "Omnichannel Scale Strategy",
+      "Priority Strategy Consultation",
+      "Custom API & Analytics Dashboard"
+    ]
+  }
 ];
 
 const SKILLS = [
@@ -23,10 +83,10 @@ const SKILLS = [
   { name:"Meta Ads", level:"Advanced", pct:85 },
   { name:"Website Design", level:"Advanced", pct:87 },
   { name:"Social Media Marketing", level:"Expert", pct:90 },
-  { name:"Graphic Design", level:"Advanced", pct:82 },
-  { name:"Google Analytics", level:"Advanced", pct:85 },
+  { name:"Graphic Design & Branding", level:"Advanced", pct:82 },
+  { name:"Google Analytics & CRO", level:"Advanced", pct:85 },
   { name:"Content Strategy", level:"Advanced", pct:84 },
-  { name:"Email Marketing", level:"Intermediate", pct:78 }
+  { name:"Email & Video Automation", level:"Intermediate", pct:80 }
 ];
 
 const PORTFOLIO = [
@@ -315,7 +375,7 @@ const revealObs = new IntersectionObserver((entries) => {
 $$(".reveal, .reveal-zoom, .reveal-blur").forEach(el => revealObs.observe(el));
 
 
-/* ---------- PARTICLES ---------- */
+/* ---------- PARTICLES (Neon Purple) ---------- */
 
 const pCanvas = $("#particles-canvas");
 if (pCanvas) {
@@ -330,10 +390,10 @@ if (pCanvas) {
     reset() {
       this.x = Math.random() * pCanvas.width;
       this.y = Math.random() * pCanvas.height;
-      this.r = Math.random() * 2 + .5;
+      this.r = Math.random() * 2.2 + .5;
       this.vx = (Math.random() - .5) * .4;
       this.vy = (Math.random() - .5) * .4;
-      this.alpha = Math.random() * .5 + .1;
+      this.alpha = Math.random() * .55 + .15;
     }
     update() {
       this.x += this.vx; this.y += this.vy;
@@ -343,12 +403,12 @@ if (pCanvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(96,165,250,${this.alpha})`;
+      ctx.fillStyle = `rgba(168,85,247,${this.alpha})`;
       ctx.fill();
     }
   }
 
-  for (let i = 0; i < 70; i++) particles.push(new Particle());
+  for (let i = 0; i < 75; i++) particles.push(new Particle());
 
   function drawLines() {
     for (let i = 0; i < particles.length; i++) {
@@ -360,7 +420,7 @@ if (pCanvas) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(37,99,235,${.18 * (1 - d / 120)})`;
+          ctx.strokeStyle = `rgba(139,92,246,${.18 * (1 - d / 120)})`;
           ctx.lineWidth = .5;
           ctx.stroke();
         }
@@ -393,6 +453,49 @@ if (servicesGrid) {
     servicesGrid.appendChild(card);
   });
   $$(".reveal", servicesGrid).forEach(el => revealObs.observe(el));
+}
+
+
+/* ---------- RENDER: PROCESS TIMELINE ---------- */
+
+const processGrid = $("#processGrid");
+if (processGrid) {
+  PROCESS_STEPS.forEach((p, i) => {
+    const card = el("div", { className: "process-card glass-card reveal" });
+    card.style.setProperty("--i", i);
+    card.innerHTML = `
+      <div class="process-num">${p.num}</div>
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>`;
+    processGrid.appendChild(card);
+  });
+  $$(".reveal", processGrid).forEach(el => revealObs.observe(el));
+}
+
+
+/* ---------- RENDER: PRICING ---------- */
+
+const pricingGrid = $("#pricingGrid");
+if (pricingGrid) {
+  PRICING_PLANS.forEach((p, i) => {
+    const card = el("div", { className: `pricing-card glass-card reveal${p.featured ? " pricing-card-featured" : ""}` });
+    card.style.setProperty("--i", i);
+    card.innerHTML = `
+      <div>
+        <span class="pricing-badge">${p.badge}</span>
+        <h3>${p.name}</h3>
+        <div class="pricing-price"><b>${p.price}</b><span>${p.period}</span></div>
+        <p style="font-size:13.5px;color:var(--text);">${p.desc}</p>
+        <ul class="pricing-features">
+          ${p.features.map(f => `<li><i class="fa-solid fa-circle-check"></i>${f}</li>`).join("")}
+        </ul>
+      </div>
+      <a href="contact.html" class="btn ${p.featured ? "btn-primary" : "btn-outline"} rippleize" style="margin-top:28px;width:100%;justify-content:center;">
+        Get Started
+      </a>`;
+    pricingGrid.appendChild(card);
+  });
+  $$(".reveal", pricingGrid).forEach(el => revealObs.observe(el));
 }
 
 
@@ -684,53 +787,11 @@ if (smTabs && smCards) {
 }
 
 
-/* ---------- PARALLAX HERO IMAGE ---------- */
-
-const parallaxImg = $("#parallaxImg");
-if (parallaxImg) {
-  window.addEventListener("mousemove", e => {
-    const x = (e.clientX / innerWidth - .5) * 16;
-    const y = (e.clientY / innerHeight - .5) * 16;
-    parallaxImg.style.transform = `translate(${x}px, ${y}px)`;
-  });
-}
-
-
-/* ---------- SMOOTH ANCHOR ---------- */
-
-$$('a[href^="#"]').forEach(a => {
-  a.addEventListener("click", e => {
-    const id = a.getAttribute("href");
-    if (id === "#") return;
-    const target = $(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-
-
-/* ---------- SEND MESSAGE (WhatsApp redirect) ---------- */
-
-const sendBtn = $("#sendMsgBtn");
-if (sendBtn) {
-  sendBtn.addEventListener("click", () => {
-    const name  = $(".form-card input[type='text']")?.value || "";
-    const email = $(".form-card input[type='email']")?.value || "";
-    const phone = $(".form-card input[type='tel']")?.value || "";
-    const msg   = $(".form-card textarea")?.value || "";
-    const body  = `Hi AbhiFY!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(msg)}`;
-    window.open(`https://wa.me/919569890314?text=${body}`, "_blank");
-  });
-}
-
-
-/* ---------- RENDER: PREVIEW SERVICES (Home page) ---------- */
+/* ---------- RENDER: PREVIEW SERVICES (Home page - 6 Cards) ---------- */
 
 const previewGrid = $("#previewServicesGrid");
 if (previewGrid) {
-  SERVICES.slice(0, 4).forEach((s, i) => {
+  SERVICES.slice(0, 6).forEach((s, i) => {
     const card = el("div", { className: "service-card glass-card reveal" });
     card.style.setProperty("--i", i);
     card.innerHTML = `
@@ -741,6 +802,18 @@ if (previewGrid) {
     previewGrid.appendChild(card);
   });
   $$(".reveal", previewGrid).forEach(el => revealObs.observe(el));
+}
+
+
+/* ---------- PARALLAX HERO IMAGE ---------- */
+
+const parallaxImg = $("#parallaxImg");
+if (parallaxImg) {
+  window.addEventListener("mousemove", e => {
+    const x = (e.clientX / innerWidth - .5) * 16;
+    const y = (e.clientY / innerHeight - .5) * 16;
+    parallaxImg.style.transform = `translate(${x}px, ${y}px)`;
+  });
 }
 
 
@@ -771,6 +844,21 @@ if (previewGrid) {
     if (a.textContent.trim() === activeLabel) a.classList.add("active");
   });
 })();
+
+
+/* ---------- SEND MESSAGE (WhatsApp redirect) ---------- */
+
+const sendBtn = $("#sendMsgBtn");
+if (sendBtn) {
+  sendBtn.addEventListener("click", () => {
+    const name  = $(".form-card input[type='text']")?.value || "";
+    const email = $(".form-card input[type='email']")?.value || "";
+    const phone = $(".form-card input[type='tel']")?.value || "";
+    const msg   = $(".form-card textarea")?.value || "";
+    const body  = `Hi AbhiFY!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(msg)}`;
+    window.open(`https://wa.me/919569890314?text=${body}`, "_blank");
+  });
+}
 
 
 })();
