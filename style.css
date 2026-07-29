@@ -2376,7 +2376,7 @@ footer {
 #back-top {
   position: fixed;
   bottom: 28px;
-  right: 28px;
+  right: 175px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -3286,9 +3286,9 @@ footer {
 /* ================= CARTOON MASCOT WIDGET ================= */
 .mascot-container {
   position: fixed;
-  bottom: 24px;
-  right: 28px;
-  z-index: 9990;
+  bottom: 16px;
+  right: 20px;
+  z-index: 999999;
   display: flex;
   flex-direction: column;
   align-items: center;
