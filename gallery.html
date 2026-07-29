@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — AbhiFY</title>
+<meta name="description" content="Browse AbhiFY's creative gallery — designs, social media posts, websites, branding, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader"><div class="loader-mark">Abhi<span>FY</span></div><div class="loader-bar"><i></i></div></div>
+<div id="cursor-glow"></div>
+<div id="cursor-dot"></div>
+<div id="scroll-progress"></div>
+
+<header id="site-header">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo"><span class="dot"></span>Abhi<span>FY</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta btn-ripple">Let's Talk</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="social-media.html">Social Media</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="glow-orb o1"></div>
+  <div class="glow-orb o2"></div>
+  <div class="page-hero-content">
+    <span class="section-tag">Gallery</span>
+    <h1>A Look Into The <span>Creative Work</span></h1>
+    <p>Browse through designs, posts, websites, branding, and more from past projects.</p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Creative Showcase</span>
+      <h2 class="section-title">Visual <span>Portfolio</span></h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <div class="lb-content">
+    <div class="img-placeholder"><i class="fa-solid fa-image ph-icon"></i><span class="ph-label" id="lbLabel">Gallery Image</span></div>
+    <button class="lb-close" id="lbClose"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lb-next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-box"><i class="fa-solid fa-bolt ph-icon" style="font-size:20px;color:var(--highlight)"></i></div>
+        <div class="logo">Abhi<span>FY</span></div>
+        <p>Digital. Smart. Profitable. Helping brands grow with data-driven marketing and premium design.</p>
+        <div class="social-row">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="social-media.html">Social Media</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="#">Email: Abhishek</a><a href="#">9569890314</a><a href="#">7080630314</a><a href="#">@abhify07</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AbhiFY. All rights reserved.</p>
+      <p>Digital. Smart. Profitable.</p>
+    </div>
+  </div>
+</footer>
+
+<a id="whatsapp-float" href="https://wa.me/919569890314" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<button id="back-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="app.js"></script>
+</body>
+</html>
