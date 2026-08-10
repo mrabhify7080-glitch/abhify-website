@@ -3,16 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — AbhiFY</title>
-<meta name="description" content="AbhiFY portfolio — SEO case studies, Google Ads campaigns, Meta Ads results, and website design projects.">
+<title>Our Work & Case Studies | Digital Marketing Portfolio — AbhiFY Varanasi</title>
+<meta name="description" content="See real results from AbhiFY's digital marketing campaigns — SEO case studies, Google Ads performance, Meta Ads ROAS, and website design projects for businesses across Varanasi and India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="apple-touch-icon" href="logo.jpg">
+<style>
+/* ====== PORTFOLIO PAGE — EXCLUSIVE DARK VIOLET PREMIUM THEME ====== */
+
+body.portfolio-page {
+  --pf-bg: #0D0A1A;
+  --pf-bg-alt: #14102A;
+  --pf-card: rgba(22, 18, 46, 0.85);
+  --pf-card-solid: #16122E;
+  --pf-text: #E8E4F0;
+  --pf-text-secondary: #9B94B0;
+  --pf-accent: #A855F7;
+  --pf-accent-light: #C084FC;
+  --pf-accent-glow: rgba(168, 85, 247, 0.35);
+  --pf-border: rgba(168, 85, 247, 0.15);
+  --pf-border-active: rgba(168, 85, 247, 0.4);
+  --pf-gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 40%, #E879F9 100%);
+  --pf-gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(168,85,247,0.08) 100%);
+  --pf-shadow: 0 16px 48px -12px rgba(124, 58, 237, 0.25);
+  --pf-shadow-hover: 0 28px 60px -12px rgba(168, 85, 247, 0.35);
+
+  background: var(--pf-bg) !important;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 100% 50%, rgba(168,85,247,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 0% 80%, rgba(232,121,249,0.06) 0%, transparent 50%) !important;
+  background-attachment: fixed !important;
+  color: var(--pf-text) !important;
+}
+
+/* --- Scrollbar --- */
+body.portfolio-page::-webkit-scrollbar-track { background: var(--pf-bg); }
+body.portfolio-page::-webkit-scrollbar-thumb { background: var(--pf-accent); }
+body.portfolio-page ::selection { background: var(--pf-accent); color: #fff; }
+
+/* --- Scroll progress --- */
+body.portfolio-page #scroll-progress { background: var(--pf-gradient) !important; }
+
+/* --- Header override --- */
+body.portfolio-page #site-header {
+  background: rgba(13, 10, 26, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(1.5) !important;
+  border-bottom: 1px solid var(--pf-border) !important;
+}
+body.portfolio-page #site-header nav .nav-links a { color: var(--pf-text-secondary) !important; }
+body.portfolio-page #site-header nav .nav-links a:hover { color: var(--pf-accent-light) !important; }
+body.portfolio-page .nav-cta {
+  background: var(--pf-gradient) !important;
+  border: none !important;
+  color: #fff !important;
+}
+body.portfolio-page .burger span { background: var(--pf-text) !important; }
+
+/* --- Mobile Nav --- */
+body.portfolio-page .mobile-nav {
+  background: var(--pf-bg-alt) !important;
+  border-left: 1px solid var(--pf-border) !important;
+}
+body.portfolio-page .mobile-nav a { color: var(--pf-text) !important; }
+
+/* --- Page Hero --- */
+body.portfolio-page .page-hero {
+  background: var(--pf-bg) !important;
+  min-height: 50vh;
+  position: relative;
+}
+body.portfolio-page .page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 400px at 30% 40%, rgba(124,58,237,0.25), transparent),
+    radial-gradient(circle 300px at 70% 60%, rgba(232,121,249,0.15), transparent);
+  z-index: 0;
+  animation: pf-hero-pulse 8s ease-in-out infinite alternate;
+}
+@keyframes pf-hero-pulse {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.05); }
+}
+
+body.portfolio-page .page-hero .glow-orb.o1 {
+  background: radial-gradient(circle, rgba(124,58,237,0.45), transparent 70%) !important;
+  width: 500px !important; height: 500px !important;
+  top: -15% !important; left: -10% !important;
+  animation: pf-orb-float1 12s ease-in-out infinite alternate !important;
+}
+body.portfolio-page .page-hero .glow-orb.o2 {
+  background: radial-gradient(circle, rgba(232,121,249,0.3), transparent 70%) !important;
+  width: 400px !important; height: 400px !important;
+  bottom: -10% !important; right: -5% !important;
+  animation: pf-orb-float2 10s ease-in-out infinite alternate !important;
+}
+@keyframes pf-orb-float1 { 0% { transform: translate(0,0); } 100% { transform: translate(40px, 30px); } }
+@keyframes pf-orb-float2 { 0% { transform: translate(0,0); } 100% { transform: translate(-30px, -20px); } }
+
+body.portfolio-page .page-hero-content h1 { color: #fff !important; }
+body.portfolio-page .page-hero-content h1 span {
+  background: var(--pf-gradient) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+body.portfolio-page .page-hero-content p { color: var(--pf-text-secondary) !important; }
+body.portfolio-page .page-hero .section-tag {
+  background: rgba(168,85,247,0.12) !important;
+  border: 1px solid rgba(168,85,247,0.3) !important;
+  color: var(--pf-accent-light) !important;
+}
+body.portfolio-page .page-hero .section-tag::before {
+  background: var(--pf-accent-light) !important;
+}
+
+/* === Floating geometric shapes in hero === */
+body.portfolio-page .page-hero .hero-grid {
+  background:
+    linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px) !important;
+  background-size: 60px 60px !important;
+  animation: pf-grid-move 25s linear infinite;
+}
+@keyframes pf-grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* --- Section Heads --- */
+body.portfolio-page .section-tag {
+  background: rgba(168,85,247,0.12) !important;
+  border: 1px solid rgba(168,85,247,0.3) !important;
+  color: var(--pf-accent-light) !important;
+}
+body.portfolio-page .section-tag::before { background: var(--pf-accent-light) !important; }
+body.portfolio-page .section-title { color: #fff !important; }
+body.portfolio-page .section-title span {
+  background: var(--pf-gradient) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* --- Filter Bar --- */
+body.portfolio-page .filter-btn {
+  background: var(--pf-card) !important;
+  border: 1px solid var(--pf-border) !important;
+  color: var(--pf-text-secondary) !important;
+  backdrop-filter: blur(12px);
+  transition: all .35s cubic-bezier(.16,1,.3,1) !important;
+}
+body.portfolio-page .filter-btn:hover {
+  color: var(--pf-accent-light) !important;
+  border-color: var(--pf-border-active) !important;
+  background: rgba(168,85,247,0.08) !important;
+  transform: translateY(-2px);
+}
+body.portfolio-page .filter-btn.active {
+  background: var(--pf-gradient) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 24px -4px var(--pf-accent-glow) !important;
+  transform: translateY(-2px);
+}
+
+/* --- Portfolio Cards --- */
+body.portfolio-page .pf-card {
+  background: var(--pf-card) !important;
+  border: 1px solid var(--pf-border) !important;
+  backdrop-filter: blur(16px);
+  transition: all .45s cubic-bezier(.16,1,.3,1) !important;
+  position: relative;
+  overflow: hidden;
+}
+body.portfolio-page .pf-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: var(--pf-gradient);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity .45s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+body.portfolio-page .pf-card:hover::before { opacity: 1; }
+body.portfolio-page .pf-card:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: var(--pf-shadow-hover) !important;
+  border-color: transparent !important;
+}
+
+body.portfolio-page .pf-thumb .img-placeholder {
+  background: var(--pf-bg-alt) !important;
+}
+body.portfolio-page .pf-thumb .img-placeholder.shimmer {
+  background: linear-gradient(110deg, #14102A 30%, #1E1840 50%, #14102A 70%) !important;
+  background-size: 200% 100% !important;
+  animation: pf-shimmer 2s infinite !important;
+}
+@keyframes pf-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+body.portfolio-page .pf-thumb .ph-icon { color: var(--pf-accent) !important; }
+body.portfolio-page .pf-thumb .ph-label { color: var(--pf-text-secondary) !important; }
+
+body.portfolio-page .pf-overlay {
+  background: linear-gradient(180deg, transparent 30%, rgba(13,10,26,0.9)) !important;
+}
+body.portfolio-page .pf-tags span {
+  background: rgba(168,85,247,0.2) !important;
+  color: var(--pf-accent-light) !important;
+  border: 1px solid rgba(168,85,247,0.3);
+  backdrop-filter: blur(8px);
+}
+
+body.portfolio-page .pf-body h3 { color: #fff !important; }
+body.portfolio-page .pf-body p { color: var(--pf-text-secondary) !important; }
+
+body.portfolio-page .pf-btns a {
+  border: 1px solid var(--pf-border) !important;
+  color: var(--pf-text) !important;
+  transition: all .3s ease !important;
+}
+body.portfolio-page .pf-btns a:hover {
+  border-color: var(--pf-accent) !important;
+  color: var(--pf-accent-light) !important;
+}
+body.portfolio-page .pf-btns a.solid {
+  background: var(--pf-gradient) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 6px 20px -4px var(--pf-accent-glow);
+}
+body.portfolio-page .pf-btns a.solid:hover {
+  box-shadow: 0 10px 30px -4px var(--pf-accent-glow);
+}
+
+/* --- Case Studies --- */
+body.portfolio-page #case-studies {
+  background: linear-gradient(180deg, transparent, rgba(124,58,237,0.06), transparent) !important;
+}
+body.portfolio-page .cs-card {
+  background: var(--pf-card) !important;
+  border: 1px solid var(--pf-border) !important;
+  backdrop-filter: blur(16px);
+  transition: all .4s ease !important;
+}
+body.portfolio-page .cs-card:hover {
+  border-color: var(--pf-border-active) !important;
+  box-shadow: var(--pf-shadow) !important;
+}
+body.portfolio-page .cs-banner .img-placeholder {
+  background: linear-gradient(135deg, #1E1840, #14102A) !important;
+}
+body.portfolio-page .cs-banner .ph-icon { color: var(--pf-accent) !important; }
+body.portfolio-page .cs-banner .ph-label { color: var(--pf-text-secondary) !important; }
+body.portfolio-page .cs-content .cs-tag { color: var(--pf-accent-light) !important; }
+body.portfolio-page .cs-content h3 { color: #fff !important; }
+body.portfolio-page .cs-step b { color: var(--pf-accent-light) !important; }
+body.portfolio-page .cs-step p { color: var(--pf-text-secondary) !important; }
+body.portfolio-page .cs-result {
+  background: rgba(168,85,247,0.12) !important;
+  border: 1px solid rgba(168,85,247,0.3) !important;
+  color: var(--pf-accent-light) !important;
+}
+
+/* --- Stats Counter (New Section) --- */
+.pf-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 60px 0 20px;
+}
+.pf-stat-card {
+  text-align: center;
+  padding: 36px 20px;
+  border-radius: 24px;
+  background: var(--pf-card);
+  border: 1px solid var(--pf-border);
+  backdrop-filter: blur(12px);
+  transition: all .4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.pf-stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--pf-gradient);
+  border-radius: 0 0 4px 4px;
+}
+.pf-stat-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pf-border-active);
+  box-shadow: var(--pf-shadow);
+}
+.pf-stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  background: var(--pf-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pf-stat-label {
+  font-size: 13.5px;
+  color: var(--pf-text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* --- CTA Section --- */
+.pf-cta-section {
+  padding: 80px 0;
+  text-align: center;
+}
+.pf-cta-box {
+  padding: 60px 40px;
+  border-radius: 32px;
+  background: var(--pf-gradient-soft);
+  border: 1px solid var(--pf-border);
+  position: relative;
+  overflow: hidden;
+}
+.pf-cta-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 200px at 20% 50%, rgba(124,58,237,0.15), transparent),
+    radial-gradient(circle 200px at 80% 50%, rgba(232,121,249,0.1), transparent);
+}
+.pf-cta-box h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+}
+.pf-cta-box h2 span {
+  background: var(--pf-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.pf-cta-box p {
+  color: var(--pf-text-secondary);
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+  position: relative;
+}
+.pf-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  border-radius: 100px;
+  background: var(--pf-gradient);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .4s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 8px 28px -6px var(--pf-accent-glow);
+  position: relative;
+}
+.pf-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px -6px var(--pf-accent-glow);
+}
+.pf-cta-btn i { transition: transform .3s ease; }
+.pf-cta-btn:hover i { transform: translateX(4px); }
+
+/* --- Footer override --- */
+body.portfolio-page footer {
+  background: var(--pf-bg-alt) !important;
+  border-top: 1px solid var(--pf-border);
+}
+body.portfolio-page footer p,
+body.portfolio-page footer a,
+body.portfolio-page footer h5 { color: var(--pf-text-secondary) !important; }
+body.portfolio-page footer a:hover { color: var(--pf-accent-light) !important; }
+body.portfolio-page .footer-bottom { border-color: var(--pf-border) !important; }
+
+/* --- WhatsApp & Back-top --- */
+body.portfolio-page #whatsapp-float {
+  background: var(--pf-gradient) !important;
+  box-shadow: 0 8px 24px -4px var(--pf-accent-glow) !important;
+}
+body.portfolio-page #back-top {
+  background: var(--pf-card-solid) !important;
+  border: 1px solid var(--pf-border) !important;
+  color: var(--pf-accent-light) !important;
+}
+
+/* --- Cursor --- */
+body.portfolio-page #cursor-glow { background: radial-gradient(circle, rgba(168,85,247,0.12), transparent 70%) !important; }
+body.portfolio-page #cursor-dot { background: var(--pf-accent) !important; }
+
+/* --- Floating Particles --- */
+.pf-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.pf-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pf-particle-rise linear infinite;
+}
+@keyframes pf-particle-rise {
+  0%   { opacity: 0; transform: translateY(0) scale(0); }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-400px) scale(1); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .pf-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 600px) {
+  .pf-stats { grid-template-columns: 1fr; gap: 12px; }
+  .pf-cta-box { padding: 40px 24px; }
+}
+</style>
 </head>
-<body>
+<body class="portfolio-page">
 <div class="page-wipe"></div>
 
 <div id="cursor-glow"></div>
@@ -51,12 +494,37 @@
 <!-- ================= PAGE HERO ================= -->
 <section class="page-hero">
   <div class="hero-grid"></div>
+  <div class="pf-particles" id="pfParticles"></div>
   <div class="glow-orb o1"></div>
   <div class="glow-orb o2"></div>
   <div class="page-hero-content">
-    <span class="section-tag">Selected Work</span>
+    <span class="section-tag"><i class="fa-solid fa-rocket" style="margin-right:6px"></i> Selected Work</span>
     <h1>Projects That <span>Deliver Results</span></h1>
     <p>Real campaigns, real data, real growth — explore the work behind the numbers.</p>
+  </div>
+</section>
+
+<!-- ================= STATS COUNTER ================= -->
+<section id="pf-stats-section">
+  <div class="container">
+    <div class="pf-stats">
+      <div class="pf-stat-card reveal">
+        <div class="pf-stat-number">50+</div>
+        <div class="pf-stat-label">Projects Delivered</div>
+      </div>
+      <div class="pf-stat-card reveal">
+        <div class="pf-stat-number">210%</div>
+        <div class="pf-stat-label">Avg. Traffic Growth</div>
+      </div>
+      <div class="pf-stat-card reveal">
+        <div class="pf-stat-number">5.2×</div>
+        <div class="pf-stat-label">Best ROAS</div>
+      </div>
+      <div class="pf-stat-card reveal">
+        <div class="pf-stat-number">98%</div>
+        <div class="pf-stat-label">Client Satisfaction</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -64,15 +532,15 @@
 <section id="portfolio">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">Portfolio</span>
+      <span class="section-tag"><i class="fa-solid fa-briefcase" style="margin-right:6px"></i> Portfolio</span>
       <h2 class="section-title">My <span>Best Work</span></h2>
     </div>
     <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="seo">SEO</button>
-      <button class="filter-btn" data-filter="ads">Ads</button>
-      <button class="filter-btn" data-filter="web">Web</button>
-      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group" style="margin-right:6px"></i>All</button>
+      <button class="filter-btn" data-filter="seo"><i class="fa-solid fa-magnifying-glass" style="margin-right:6px"></i>SEO</button>
+      <button class="filter-btn" data-filter="ads"><i class="fa-solid fa-bullhorn" style="margin-right:6px"></i>Ads</button>
+      <button class="filter-btn" data-filter="web"><i class="fa-solid fa-laptop-code" style="margin-right:6px"></i>Web</button>
+      <button class="filter-btn" data-filter="design"><i class="fa-solid fa-palette" style="margin-right:6px"></i>Design</button>
     </div>
     <div class="portfolio-grid" id="portfolioGrid"></div>
   </div>
@@ -82,10 +550,21 @@
 <section id="case-studies">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">Case Studies</span>
+      <span class="section-tag"><i class="fa-solid fa-flask" style="margin-right:6px"></i> Case Studies</span>
       <h2 class="section-title">Problem → Strategy → <span>Result</span></h2>
     </div>
     <div class="cs-timeline" id="csTimeline"></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="pf-cta-section">
+  <div class="container">
+    <div class="pf-cta-box reveal">
+      <h2>Ready to <span>Level Up</span> Your Brand?</h2>
+      <p>Let's discuss your next project and create something extraordinary together.</p>
+      <a href="contact.html" class="pf-cta-btn">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
   </div>
 </section>
 
@@ -98,7 +577,6 @@
         <div class="social-row">
           <a href="https://www.instagram.com/mrabhi_fy70/?hl=en" target="_blank" rel="noopener noreferrer" class="insta-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/profile.php?id=61585173705813" target="_blank" rel="noopener noreferrer" class="fb-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="li-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://wa.me/919569890314" target="_blank" rel="noopener noreferrer" class="wa-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
@@ -112,7 +590,7 @@
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="#">Email: Abhishek</a><a href="#">9569890314</a><a href="#">7080630314</a><a href="#">@abhify07</a>
+        <a href="mailto:abhify07@gmail.com">abhify07@gmail.com</a><a href="tel:+919569890314">+91 9569890314</a><a href="tel:+917080630314">+91 7080630314</a><a href="https://www.instagram.com/abhify07" target="_blank" rel="noopener noreferrer">@abhify07</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -126,5 +604,26 @@
 <button id="back-top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script src="app.js"></script>
+<script>
+/* Portfolio page — floating particles */
+(function() {
+  const container = document.getElementById('pfParticles');
+  if (!container) return;
+  const colors = ['rgba(124,58,237,0.5)', 'rgba(168,85,247,0.4)', 'rgba(232,121,249,0.35)', 'rgba(192,132,252,0.3)'];
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'pf-particle';
+    const size = Math.random() * 6 + 3;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.bottom = -20 + 'px';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    container.appendChild(p);
+  }
+})();
+</script>
 </body>
 </html>
