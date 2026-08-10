@@ -463,8 +463,8 @@ nav {
 }
 
 .brand-logo-img {
-  width: 96px;
-  height: 96px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--btn-primary);
@@ -501,8 +501,8 @@ nav {
 }
 
 header.scrolled .brand-logo-img {
-  width: 72px;
-  height: 72px;
+  width: 85px;
+  height: 85px;
 }
 
 /* Footer Logo Styling */
@@ -2318,13 +2318,13 @@ footer .container {
 }
 
 .footer-logo-box {
-  width: 52px;
-  height: 52px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 1.5px solid var(--btn-primary);
+  border: 2px solid var(--btn-primary);
   background: rgba(166, 124, 82, 0.12);
-  margin-bottom: 18px;
-  box-shadow: 0 10px 25px rgba(166, 124, 82, 0.35);
+  margin-bottom: 22px;
+  box-shadow: 0 12px 35px rgba(166, 124, 82, 0.5);
   overflow: hidden;
 }
 
