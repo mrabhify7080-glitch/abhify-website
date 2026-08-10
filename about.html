@@ -18,7 +18,38 @@
 </head>
 
 <body>
-  <div class="page-wipe"></div>
+<div class="page-wipe"></div>
+
+<div id="loader" class="global-preloader">
+  <div class="preloader-bg">
+    <canvas id="preloader-particles"></canvas>
+    <div class="preloader-grid"></div>
+    <div class="preloader-beam"></div>
+  </div>
+  <div class="preloader-content">
+    <div class="preloader-logo-wrap">
+      <img src="logo.jpg" alt="AbhiFY Logo" class="preloader-logo-img">
+    </div>
+    <div class="logo-seq">
+      <span class="p-letter">A</span>
+      <span class="p-letter">B</span>
+      <span class="p-letter">H</span>
+      <span class="p-letter">I</span>
+      <span class="p-letter p-red">F</span>
+      <span class="p-letter p-red">Y</span>
+      <div class="plane-wrap">
+        <i class="fa-solid fa-paper-plane"></i>
+        <div class="plane-trail"></div>
+      </div>
+      <div class="scan-beam"></div>
+    </div>
+    <p class="preloader-tagline">Where Ideas Become Digital Success.</p>
+    <div class="preloader-progress-box">
+      <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+      <span class="preloader-pct" id="preloaderPct">0%</span>
+    </div>
+  </div>
+</div>
 
   <div id="cursor-glow"></div>
   <div id="cursor-dot"></div>
