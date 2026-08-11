@@ -3639,26 +3639,28 @@ footer .container {
 /* Sticky Category Navigation Bar */
 .category-sticky-nav {
   position: sticky;
-  top: 75px;
-  z-index: 100;
-  background: rgba(248, 246, 243, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  top: 72px;
+  z-index: 99;
+  background: rgba(248, 246, 243, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 12px 0;
-  margin-bottom: 40px;
+  padding: 14px 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px -10px rgba(166, 124, 82, 0.12);
   transition: all 0.3s ease;
 }
 
 .cat-nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   overflow-x: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
-  padding: 4px 2px;
+  padding: 6px 4px;
 }
 
 .cat-nav-wrapper::-webkit-scrollbar {
@@ -3668,11 +3670,11 @@ footer .container {
 .cat-nav-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 18px;
+  gap: 9px;
+  padding: 10px 20px;
   border-radius: 100px;
   font-family: var(--font-alt);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-secondary);
   background: var(--card);
@@ -3680,7 +3682,7 @@ footer .container {
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .cat-nav-pill i {
@@ -3693,14 +3695,14 @@ footer .container {
   color: var(--text-primary);
   border-color: var(--btn-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(166, 124, 82, 0.15);
+  box-shadow: 0 5px 16px rgba(166, 124, 82, 0.18);
 }
 
 .cat-nav-pill.active {
   background: var(--btn-primary);
   color: #ffffff;
   border-color: var(--btn-primary);
-  box-shadow: 0 6px 18px rgba(166, 124, 82, 0.3);
+  box-shadow: 0 6px 20px rgba(166, 124, 82, 0.35);
 }
 
 .cat-nav-pill.active i {
@@ -3709,8 +3711,8 @@ footer .container {
 
 /* Category Sections */
 .category-section {
-  scroll-margin-top: 140px;
-  padding: 65px 0;
+  scroll-margin-top: 160px;
+  padding: 60px 0 50px;
   border-bottom: 1px dashed var(--border);
 }
 
