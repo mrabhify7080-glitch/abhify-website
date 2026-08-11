@@ -1168,4 +1168,42 @@ if (document.readyState === "loading") {
   initCountUp();
 }
 
+/* ---------- SERVICES CATEGORY SCROLLSPY & NAVIGATION ---------- */
+function initCategoryScrollSpy() {
+  const pills = document.querySelectorAll('.cat-nav-pill');
+  const sections = document.querySelectorAll('.category-section');
+  if (!pills.length || !sections.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        pills.forEach(pill => {
+          if (pill.getAttribute('href') === '#' + id) {
+            pill.classList.add('active');
+            pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          } else {
+            pill.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCategoryScrollSpy);
+} else {
+  initCategoryScrollSpy();
+}
+
 })();
+
