@@ -11,13 +11,15 @@ while ($listener.IsListening) {
         $res = $context.Response
         
         $urlPath = [System.Uri]::UnescapeDataString($req.Url.AbsolutePath)
+        $rootDir = $PSScriptRoot
+        if ([string]::IsNullOrEmpty($rootDir)) { $rootDir = Get-Location }
         if ($urlPath -eq "/" -or $urlPath -eq "/index.html") {
-            $filePath = "d:\abhishek\index.html"
+            $filePath = Join-Path $rootDir "index.html"
         } elseif ($urlPath -eq "/redsun" -or $urlPath -eq "/redsun/") {
-            $filePath = "d:\abhishek\redsun\index.html"
+            $filePath = Join-Path $rootDir "redsun\index.html"
         } else {
             $clean = $urlPath.TrimStart('/')
-            $filePath = Join-Path "d:\abhishek" $clean
+            $filePath = Join-Path $rootDir $clean
         }
 
         if (Test-Path $filePath -PathType Leaf) {
