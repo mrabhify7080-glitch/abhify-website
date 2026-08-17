@@ -619,21 +619,68 @@
     /* ── MOBILE ── */
     @media (max-width: 480px) {
       #abhi-window {
-        right: 0 !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        top: 0 !important;
-        width: 100% !important;
-        max-height: 100% !important;
-        height: 100% !important;
-        border-radius: 0 !important;
-        border: none !important;
+        position: fixed !important;
+        top: 12px !important;
+        bottom: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        max-width: calc(100vw - 24px) !important;
+        height: auto !important;
+        max-height: calc(100dvh - 24px) !important;
+        border-radius: 18px !important;
+        border: 1px solid rgba(201,169,110,0.3) !important;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.85) !important;
+        z-index: 999999 !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      #abhi-header {
+        padding: 12px 14px !important;
+        flex-shrink: 0 !important;
+      }
+      #abhi-avatar {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 15px !important;
+      }
+      #abhi-header-name {
+        font-size: 14px !important;
+      }
+      #abhi-messages {
+        flex: 1 !important;
+        min-height: 0 !important;
+        padding: 14px 12px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .abhi-msg {
+        max-width: 90% !important;
+        padding: 10px 14px !important;
+        font-size: 13px !important;
+      }
+      .abhi-options {
+        max-width: 100% !important;
+        gap: 6px !important;
+      }
+      .abhi-opt-btn {
+        padding: 7px 13px !important;
+        font-size: 12px !important;
+      }
+      #abhi-input-area {
+        padding: 10px 12px !important;
+        flex-shrink: 0 !important;
+      }
+      #abhi-input {
+        font-size: 16px !important; /* Prevents iOS auto-zoom */
+        padding: 9px 14px !important;
       }
       #abhi-launcher {
         bottom: 16px !important;
         right: 16px !important;
         width: 50px !important;
         height: 50px !important;
+        z-index: 999998 !important;
       }
     }
 
