@@ -1,0 +1,13 @@
+{
+  "name": "abhify-leads-backend",
+  "version": "1.0.0",
+  "description": "Serverless backend for AbhiFY Abhi chat widget — saves leads to Google Sheets and sends email notifications",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "resend": "^4.1.0"
+  }
+}
