@@ -732,10 +732,11 @@
 
       console.log("[Abhi Widget] DOM injected, launcher:", document.getElementById("abhi-launcher"));
 
-      // Move existing WhatsApp float up to avoid overlap
-      const waFloat = document.getElementById("whatsapp-float");
-      if (waFloat) {
-        waFloat.style.setProperty("bottom", "96px", "important");
+      // Move #back-top button above chatbot launcher so it doesn't overlap when scrolling
+      const backTop = document.getElementById("back-top");
+      if (backTop) {
+        backTop.style.setProperty("bottom", "96px", "important");
+        backTop.style.setProperty("right", "28px", "important");
       }
 
       initChat();
