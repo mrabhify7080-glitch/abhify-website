@@ -129,33 +129,35 @@
   /* ──────────────────── CSS ──────────────────── */
 
   const WIDGET_CSS = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
     /* ── RESET & HOST ── */
     #abhi-chat-root,
     #abhi-chat-root *,
     #abhi-chat-root *::before,
     #abhi-chat-root *::after {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0 !important; padding: 0; box-sizing: border-box !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
       -webkit-font-smoothing: antialiased;
+      line-height: normal;
     }
 
     /* ── LAUNCHER ── */
     #abhi-launcher {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: ${ABHI_CONFIG.bgColor};
-      border: 2px solid ${ABHI_CONFIG.primaryColor};
-      cursor: pointer;
-      z-index: 999998;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      width: 62px !important;
+      height: 62px !important;
+      border-radius: 50% !important;
+      background: ${ABHI_CONFIG.bgColor} !important;
+      border: 2px solid ${ABHI_CONFIG.primaryColor} !important;
+      cursor: pointer !important;
+      z-index: 999998 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: all !important;
       box-shadow:
         0 4px 24px rgba(201,169,110,0.25),
         0 0 0 0 rgba(201,169,110,0.4);
@@ -167,10 +169,10 @@
       box-shadow: 0 6px 32px rgba(201,169,110,0.4);
     }
     #abhi-launcher.abhi-open {
-      animation: none;
-      transform: scale(0.9) rotate(90deg);
-      opacity: 0;
-      pointer-events: none;
+      animation: none !important;
+      transform: scale(0.9) rotate(90deg) !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
     @keyframes abhi-pulse {
       0%, 100% { box-shadow: 0 4px 24px rgba(201,169,110,0.25), 0 0 0 0 rgba(201,169,110,0.35); }
@@ -179,10 +181,11 @@
 
     /* Launcher Icon */
     #abhi-launcher-icon {
-      width: 30px;
-      height: 30px;
-      fill: ${ABHI_CONFIG.primaryColor};
+      width: 30px !important;
+      height: 30px !important;
+      fill: ${ABHI_CONFIG.primaryColor} !important;
       transition: transform 0.3s ease;
+      display: block !important;
     }
 
     /* ── NOTIFICATION BADGE ── */
@@ -208,20 +211,20 @@
 
     /* ── CHAT WINDOW ── */
     #abhi-window {
-      position: fixed;
-      bottom: 100px;
-      right: 24px;
-      width: 388px;
+      position: fixed !important;
+      bottom: 100px !important;
+      right: 24px !important;
+      width: 388px !important;
       max-height: 580px;
-      background: ${ABHI_CONFIG.bgColor};
+      background: ${ABHI_CONFIG.bgColor} !important;
       border-radius: 20px;
       border: 1px solid rgba(201,169,110,0.2);
       box-shadow:
         0 20px 60px rgba(0,0,0,0.5),
         0 0 0 1px rgba(201,169,110,0.08),
         inset 0 1px 0 rgba(255,255,255,0.04);
-      z-index: 999999;
-      display: flex;
+      z-index: 999999 !important;
+      display: flex !important;
       flex-direction: column;
       overflow: hidden;
       opacity: 0;
@@ -706,24 +709,40 @@
   /* ──────────────────── INJECT ──────────────────── */
 
   function injectWidget() {
-    // Create root
-    const root = document.createElement("div");
-    root.id = "abhi-chat-root";
-    root.innerHTML = WIDGET_HTML;
-    document.body.appendChild(root);
+    try {
+      console.log("[Abhi Widget] Initializing...");
 
-    // Inject CSS
-    const style = document.createElement("style");
-    style.textContent = WIDGET_CSS;
-    document.head.appendChild(style);
+      // Load Google Font via link element (not @import)
+      const fontLink = document.createElement("link");
+      fontLink.rel = "stylesheet";
+      fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+      document.head.appendChild(fontLink);
 
-    // Move existing WhatsApp float up to avoid overlap
-    const waFloat = document.getElementById("whatsapp-float");
-    if (waFloat) {
-      waFloat.style.bottom = "96px";
+      // Inject CSS
+      const style = document.createElement("style");
+      style.setAttribute("id", "abhi-chat-styles");
+      style.textContent = WIDGET_CSS;
+      document.head.appendChild(style);
+
+      // Create root
+      const root = document.createElement("div");
+      root.id = "abhi-chat-root";
+      root.innerHTML = WIDGET_HTML;
+      document.body.appendChild(root);
+
+      console.log("[Abhi Widget] DOM injected, launcher:", document.getElementById("abhi-launcher"));
+
+      // Move existing WhatsApp float up to avoid overlap
+      const waFloat = document.getElementById("whatsapp-float");
+      if (waFloat) {
+        waFloat.style.setProperty("bottom", "96px", "important");
+      }
+
+      initChat();
+      console.log("[Abhi Widget] Ready!");
+    } catch (err) {
+      console.error("[Abhi Widget] Init error:", err);
     }
-
-    initChat();
   }
 
   /* ──────────────────── CHAT ENGINE ──────────────────── */
