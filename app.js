@@ -111,6 +111,7 @@ const SKILLS = [
 ];
 
 const PORTFOLIO = [
+  { cat:"web",    title:"Anshu Properties — Real Estate Portal", desc:"Custom real estate website & lead generation portal with property listings, inquiry funnels, and responsive design.", tags:["Real Estate","Web Design","Lead Gen"], url:"https://anshuproperties.com/" },
   { cat:"seo",    title:"E-Commerce SEO Overhaul",  desc:"Increased organic traffic 210% in 6 months with technical fixes and content strategy.", tags:["SEO","Technical","Content"] },
   { cat:"ads",    title:"Google Ads — Lead Gen",     desc:"Reduced CPA by 45% while scaling ad spend 3× for a real-estate client.", tags:["Google Ads","PPC","Leads"] },
   { cat:"ads",    title:"Meta Ads — D2C Brand",      desc:"Generated ₹12L revenue at 5.2× ROAS through creative testing and retargeting.", tags:["Meta Ads","E-com","ROAS"] },
@@ -122,6 +123,16 @@ const PORTFOLIO = [
 ];
 
 const CASE_STUDIES = [
+  {
+    tag:"WEB & LEAD GEN CASE STUDY",
+    title:"Anshu Properties — Real Estate Portal & Lead Engine",
+    steps:[
+      { label:"Problem", text:"Anshu Properties needed a modern, high-speed website to showcase property listings and generate qualified buyer leads." },
+      { label:"Strategy", text:"Designed a responsive real estate portal with property catalogs, fast loading speeds, and instant inquiry funnels." },
+      { label:"Result", text:"Launched full digital presence at anshuproperties.com with steady monthly lead flow." }
+    ],
+    result:"Live Portal  •  Lead Engine"
+  },
   {
     tag:"SEO CASE STUDY",
     title:"From Page 5 to #1 — E-Commerce SEO Transformation",
@@ -700,11 +711,22 @@ if (portfolioGrid) {
     items.forEach((p, i) => {
       const card = el("div", { className: "pf-card glass-card reveal" });
       card.style.setProperty("--i", i);
+      const catIcons = {
+        web: "fa-solid fa-laptop-code",
+        seo: "fa-solid fa-magnifying-glass",
+        ads: "fa-solid fa-bullhorn",
+        design: "fa-solid fa-palette"
+      };
+      const iconClass = p.url && p.url.includes("anshuproperties") ? "fa-solid fa-building" : (catIcons[p.cat] || "fa-solid fa-folder-open");
+      const liveBtn = p.url
+        ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="solid"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right:6px"></i>Visit Website</a>`
+        : `<a href="contact.html" class="solid">Get Quote</a>`;
+
       card.innerHTML = `
         <div class="pf-thumb">
           <div class="img-placeholder shimmer">
-            <i class="fa-solid fa-folder-open ph-icon"></i>
-            <span class="ph-label">${p.cat}</span>
+            <i class="${iconClass} ph-icon"></i>
+            <span class="ph-label">${p.cat.toUpperCase()}</span>
           </div>
           <div class="pf-overlay"><div class="pf-tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div></div>
         </div>
@@ -712,8 +734,8 @@ if (portfolioGrid) {
           <h3>${p.title}</h3>
           <p>${p.desc}</p>
           <div class="pf-btns">
-            <a href="#" class="solid">View Details</a>
-            <a href="#">Live Demo</a>
+            ${liveBtn}
+            <a href="contact.html">Inquire Now</a>
           </div>
         </div>`;
       portfolioGrid.appendChild(card);
