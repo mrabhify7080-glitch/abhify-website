@@ -616,28 +616,31 @@
     }
     #abhi-powered a:hover { color: ${ABHI_CONFIG.primaryColor}; }
 
-    /* ── MOBILE ── */
+    /* ── MOBILE (COMPACT FLOATING CHAT BOX) ── */
     @media (max-width: 480px) {
       #abhi-window {
         position: fixed !important;
-        top: 12px !important;
-        bottom: 12px !important;
-        left: 12px !important;
+        bottom: 74px !important;
         right: 12px !important;
-        width: auto !important;
-        max-width: calc(100vw - 24px) !important;
-        height: auto !important;
-        max-height: calc(100dvh - 24px) !important;
-        border-radius: 18px !important;
-        border: 1px solid rgba(201,169,110,0.3) !important;
-        box-shadow: 0 16px 48px rgba(0,0,0,0.85) !important;
+        left: auto !important;
+        top: auto !important;
+        width: calc(100vw - 24px) !important;
+        max-width: 360px !important;
+        height: 68vh !important;
+        max-height: 480px !important;
+        min-height: 380px !important;
+        border-radius: 20px !important;
+        border: 1.5px solid rgba(201,169,110,0.35) !important;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.85), 0 0 20px rgba(201,169,110,0.15) !important;
         z-index: 999999 !important;
         display: flex !important;
         flex-direction: column !important;
+        overflow: hidden !important;
       }
       #abhi-header {
         padding: 12px 14px !important;
         flex-shrink: 0 !important;
+        border-bottom: 1px solid rgba(201,169,110,0.2) !important;
       }
       #abhi-avatar {
         width: 36px !important;
@@ -646,6 +649,10 @@
       }
       #abhi-header-name {
         font-size: 14px !important;
+        font-weight: 700 !important;
+      }
+      #abhi-header-status {
+        font-size: 11px !important;
       }
       #abhi-messages {
         flex: 1 !important;
@@ -655,25 +662,33 @@
         -webkit-overflow-scrolling: touch !important;
       }
       .abhi-msg {
-        max-width: 90% !important;
-        padding: 10px 14px !important;
+        max-width: 88% !important;
+        padding: 10px 13px !important;
         font-size: 13px !important;
+        line-height: 1.5 !important;
       }
       .abhi-options {
         max-width: 100% !important;
         gap: 6px !important;
       }
       .abhi-opt-btn {
-        padding: 7px 13px !important;
+        padding: 7px 12px !important;
         font-size: 12px !important;
       }
       #abhi-input-area {
         padding: 10px 12px !important;
         flex-shrink: 0 !important;
+        background: rgba(10,10,10,0.95) !important;
+        border-top: 1px solid rgba(201,169,110,0.2) !important;
       }
       #abhi-input {
         font-size: 16px !important; /* Prevents iOS auto-zoom */
         padding: 9px 14px !important;
+        border-radius: 20px !important;
+      }
+      #abhi-send {
+        width: 36px !important;
+        height: 36px !important;
       }
       #abhi-launcher {
         bottom: 16px !important;
@@ -819,12 +834,23 @@
       if (!isOpen) badge.classList.add("abhi-show");
     }, 3000);
 
+    // Lock/Unlock background scroll on mobile
+    function lockBodyScroll() {
+      if (window.innerWidth <= 480) {
+        document.body.style.overflow = "hidden";
+      }
+    }
+    function unlockBodyScroll() {
+      document.body.style.overflow = "";
+    }
+
     // Open/Close
     launcher.addEventListener("click", () => {
       isOpen = true;
       launcher.classList.add("abhi-open");
       win.classList.add("abhi-visible");
       badge.classList.remove("abhi-show");
+      lockBodyScroll();
       if (!hasStarted) {
         hasStarted = true;
         showBotMessage(QUESTIONS[0].message, () => {
@@ -837,6 +863,7 @@
       isOpen = false;
       launcher.classList.remove("abhi-open");
       win.classList.remove("abhi-visible");
+      unlockBodyScroll();
     });
 
     // Close on Escape
