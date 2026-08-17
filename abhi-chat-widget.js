@@ -667,7 +667,7 @@
       <div id="abhi-header">
         <div id="abhi-avatar">A</div>
         <div id="abhi-header-info">
-          <div id="abhi-header-name">Abhi from AbhiFY</div>
+          <div id="abhi-header-name">Abhi</div>
           <div id="abhi-header-status">Online</div>
         </div>
         <button id="abhi-close" aria-label="Close chat">
