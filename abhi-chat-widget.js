@@ -28,7 +28,7 @@
       id: "business_name",
       type: "text",
       message:
-        "👋 Hey! I'm Abhi from AbhiFY.\nLet's see how we can grow your brand digitally!\n\nWhat's your business or brand name?",
+        "\uD83D\uDC4B Hey! I'm Abhi from AbhiFY.\nLet's see how we can grow your brand digitally!\n\nWhat's your business or brand name?",
       placeholder: "Your business name…",
     },
     {
@@ -935,7 +935,7 @@
         confirmWrap.className = "abhi-confirm-wrap";
         const confirmBtn = document.createElement("button");
         confirmBtn.className = "abhi-confirm-btn";
-        confirmBtn.textContent = "Confirm ✓";
+        confirmBtn.textContent = "Confirm \u2713";
         confirmBtn.disabled = true;
         confirmBtn.addEventListener("click", () => {
           if (multiSelections.length === 0) return;
@@ -1011,7 +1011,7 @@
 
     function showCompletionFlow() {
       showBotMessage(
-        "Thank you! 🎉 Here's a summary of your details:",
+        "Thank you! \uD83C\uDF89 Here's a summary of your details:",
         () => {
           showSummaryCard();
           setTimeout(() => {
@@ -1039,7 +1039,7 @@
         source: "Source",
       };
 
-      let html = '<div class="abhi-summary-title">📋 Lead Summary</div>';
+      let html = '<div class="abhi-summary-title">\uD83D\uDCCB Lead Summary</div>';
       for (const q of QUESTIONS) {
         const val = answers[q.id];
         if (val && val !== "Skipped") {
@@ -1080,7 +1080,7 @@
 
         if (res.ok) {
           showBotMessage(
-            "Your details have been sent to the AbhiFY team! 🚀\nWe'll reach out within a few hours.\n\nWant to connect right now? Tap below to message us on WhatsApp:",
+            "Your details have been sent to the AbhiFY team! \uD83D\uDE80\nWe'll reach out within a few hours.\n\nWant to connect right now? Tap below to message us on WhatsApp:",
             () => {
               showWhatsAppCTA();
             }
@@ -1092,7 +1092,7 @@
         console.error("[Abhi Widget] Lead submit error:", err);
         // Still show WhatsApp option as fallback
         showBotMessage(
-          "I've noted all your details! Our team will get back to you soon. 🙌\n\nYou can also connect directly on WhatsApp:",
+          "I've noted all your details! Our team will get back to you soon. \uD83D\uDE4C\n\nYou can also connect directly on WhatsApp:",
           () => {
             showWhatsAppCTA();
           }
@@ -1102,14 +1102,14 @@
 
     function showWhatsAppCTA() {
       const waText = encodeURIComponent(
-        `Hi AbhiFY! 👋\n\nI just filled out the chat on your website. Here are my details:\n\n` +
-          `🏢 Business: ${answers.business_name || "N/A"}\n` +
-          `📍 City: ${answers.city || "N/A"}\n` +
-          `📌 Services: ${answers.services || "N/A"}\n` +
-          `🎯 Goal: ${answers.goal || "N/A"}\n` +
-          `💰 Budget: ${answers.budget || "N/A"}\n` +
-          `⏰ Timeline: ${answers.timeline || "N/A"}\n` +
-          `👤 Name: ${answers.name || "N/A"}\n\n` +
+        `Hi AbhiFY! \uD83D\uDC4B\n\nI just filled out the chat on your website. Here are my details:\n\n` +
+          `\uD83C\uDFE2 Business: ${answers.business_name || "N/A"}\n` +
+          `\uD83D\uDCCD City: ${answers.city || "N/A"}\n` +
+          `\uD83D\uDCCC Services: ${answers.services || "N/A"}\n` +
+          `\uD83C\uDFAF Goal: ${answers.goal || "N/A"}\n` +
+          `\uD83D\uDCB0 Budget: ${answers.budget || "N/A"}\n` +
+          `\u23F0 Timeline: ${answers.timeline || "N/A"}\n` +
+          `\uD83D\uDC64 Name: ${answers.name || "N/A"}\n\n` +
           `Looking forward to hearing from you!`
       );
 
