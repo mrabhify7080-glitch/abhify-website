@@ -619,20 +619,21 @@
     /* ── MOBILE ── */
     @media (max-width: 480px) {
       #abhi-window {
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        max-height: 100%;
-        height: 100%;
-        border-radius: 0;
-        border: none;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-height: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
       }
       #abhi-launcher {
-        bottom: 16px;
-        right: 16px;
-        width: 56px;
-        height: 56px;
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 50px !important;
+        height: 50px !important;
       }
     }
 
