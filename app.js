@@ -1192,13 +1192,48 @@ if (document.readyState === "loading") {
 
 /* ---------- SERVICES CATEGORY SCROLLSPY & NAVIGATION ---------- */
 function initCategoryScrollSpy() {
+  const navWrapper = document.querySelector('.cat-nav-wrapper');
   const pills = document.querySelectorAll('.cat-nav-pill');
   const sections = document.querySelectorAll('.category-section');
   if (!pills.length || !sections.length) return;
 
+  function centerActivePill(pill) {
+    if (!navWrapper || !pill) return;
+    const pillLeft = pill.offsetLeft;
+    const pillWidth = pill.offsetWidth;
+    const wrapperWidth = navWrapper.offsetWidth;
+    navWrapper.scrollTo({
+      left: pillLeft - wrapperWidth / 2 + pillWidth / 2,
+      behavior: 'smooth'
+    });
+  }
+
+  // Smooth click navigation
+  pills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      const targetId = pill.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetSec = document.querySelector(targetId);
+        if (targetSec) {
+          e.preventDefault();
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          centerActivePill(pill);
+          const headerOffset = 135;
+          const targetPos = targetSec.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: targetPos,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  // ScrollSpy with IntersectionObserver
   const observerOptions = {
     root: null,
-    rootMargin: '-20% 0px -60% 0px',
+    rootMargin: '-15% 0px -55% 0px',
     threshold: 0
   };
 
@@ -1209,7 +1244,7 @@ function initCategoryScrollSpy() {
         pills.forEach(pill => {
           if (pill.getAttribute('href') === '#' + id) {
             pill.classList.add('active');
-            pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            centerActivePill(pill);
           } else {
             pill.classList.remove('active');
           }
