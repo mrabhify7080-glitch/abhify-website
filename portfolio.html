@@ -12,276 +12,9 @@
 <link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="apple-touch-icon" href="logo.jpg">
 <style>
-/* ====== PORTFOLIO PAGE — EXCLUSIVE DARK VIOLET PREMIUM THEME ====== */
+/* ====== PORTFOLIO PAGE — Layout-only styles (uses site default theme) ====== */
 
-body.portfolio-page {
-  --pf-bg: #0D0A1A;
-  --pf-bg-alt: #14102A;
-  --pf-card: rgba(22, 18, 46, 0.85);
-  --pf-card-solid: #16122E;
-  --pf-text: #E8E4F0;
-  --pf-text-secondary: #9B94B0;
-  --pf-accent: #A855F7;
-  --pf-accent-light: #C084FC;
-  --pf-accent-glow: rgba(168, 85, 247, 0.35);
-  --pf-border: rgba(168, 85, 247, 0.15);
-  --pf-border-active: rgba(168, 85, 247, 0.4);
-  --pf-gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 40%, #E879F9 100%);
-  --pf-gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(168,85,247,0.08) 100%);
-  --pf-shadow: 0 16px 48px -12px rgba(124, 58, 237, 0.25);
-  --pf-shadow-hover: 0 28px 60px -12px rgba(168, 85, 247, 0.35);
-
-  background: var(--pf-bg) !important;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.2) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 100% 50%, rgba(168,85,247,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 0% 80%, rgba(232,121,249,0.06) 0%, transparent 50%) !important;
-  background-attachment: fixed !important;
-  color: var(--pf-text) !important;
-}
-
-/* --- Scrollbar --- */
-body.portfolio-page::-webkit-scrollbar-track { background: var(--pf-bg); }
-body.portfolio-page::-webkit-scrollbar-thumb { background: var(--pf-accent); }
-body.portfolio-page ::selection { background: var(--pf-accent); color: #fff; }
-
-/* --- Scroll progress --- */
-body.portfolio-page #scroll-progress { background: var(--pf-gradient) !important; }
-
-/* --- Header override --- */
-body.portfolio-page #site-header {
-  background: rgba(13, 10, 26, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(1.5) !important;
-  border-bottom: 1px solid var(--pf-border) !important;
-}
-body.portfolio-page #site-header nav .nav-links a { color: var(--pf-text-secondary) !important; }
-body.portfolio-page #site-header nav .nav-links a:hover { color: var(--pf-accent-light) !important; }
-body.portfolio-page .nav-cta {
-  background: var(--pf-gradient) !important;
-  border: none !important;
-  color: #fff !important;
-}
-body.portfolio-page .burger span { background: var(--pf-text) !important; }
-
-/* --- Mobile Nav --- */
-body.portfolio-page .mobile-nav {
-  background: var(--pf-bg-alt) !important;
-  border-left: 1px solid var(--pf-border) !important;
-}
-body.portfolio-page .mobile-nav a { color: var(--pf-text) !important; }
-
-/* --- Page Hero --- */
-body.portfolio-page .page-hero {
-  background: var(--pf-bg) !important;
-  min-height: 50vh;
-  position: relative;
-}
-body.portfolio-page .page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle 400px at 30% 40%, rgba(124,58,237,0.25), transparent),
-    radial-gradient(circle 300px at 70% 60%, rgba(232,121,249,0.15), transparent);
-  z-index: 0;
-  animation: pf-hero-pulse 8s ease-in-out infinite alternate;
-}
-@keyframes pf-hero-pulse {
-  0%   { opacity: 0.7; transform: scale(1); }
-  100% { opacity: 1;   transform: scale(1.05); }
-}
-
-body.portfolio-page .page-hero .glow-orb.o1 {
-  background: radial-gradient(circle, rgba(124,58,237,0.45), transparent 70%) !important;
-  width: 500px !important; height: 500px !important;
-  top: -15% !important; left: -10% !important;
-  animation: pf-orb-float1 12s ease-in-out infinite alternate !important;
-}
-body.portfolio-page .page-hero .glow-orb.o2 {
-  background: radial-gradient(circle, rgba(232,121,249,0.3), transparent 70%) !important;
-  width: 400px !important; height: 400px !important;
-  bottom: -10% !important; right: -5% !important;
-  animation: pf-orb-float2 10s ease-in-out infinite alternate !important;
-}
-@keyframes pf-orb-float1 { 0% { transform: translate(0,0); } 100% { transform: translate(40px, 30px); } }
-@keyframes pf-orb-float2 { 0% { transform: translate(0,0); } 100% { transform: translate(-30px, -20px); } }
-
-body.portfolio-page .page-hero-content h1 { color: #fff !important; }
-body.portfolio-page .page-hero-content h1 span {
-  background: var(--pf-gradient) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-body.portfolio-page .page-hero-content p { color: var(--pf-text-secondary) !important; }
-body.portfolio-page .page-hero .section-tag {
-  background: rgba(168,85,247,0.12) !important;
-  border: 1px solid rgba(168,85,247,0.3) !important;
-  color: var(--pf-accent-light) !important;
-}
-body.portfolio-page .page-hero .section-tag::before {
-  background: var(--pf-accent-light) !important;
-}
-
-/* === Floating geometric shapes in hero === */
-body.portfolio-page .page-hero .hero-grid {
-  background:
-    linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px) !important;
-  background-size: 60px 60px !important;
-  animation: pf-grid-move 25s linear infinite;
-}
-@keyframes pf-grid-move {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(60px, 60px); }
-}
-
-/* --- Section Heads --- */
-body.portfolio-page .section-tag {
-  background: rgba(168,85,247,0.12) !important;
-  border: 1px solid rgba(168,85,247,0.3) !important;
-  color: var(--pf-accent-light) !important;
-}
-body.portfolio-page .section-tag::before { background: var(--pf-accent-light) !important; }
-body.portfolio-page .section-title { color: #fff !important; }
-body.portfolio-page .section-title span {
-  background: var(--pf-gradient) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-
-/* --- Filter Bar --- */
-body.portfolio-page .filter-btn {
-  background: var(--pf-card) !important;
-  border: 1px solid var(--pf-border) !important;
-  color: var(--pf-text-secondary) !important;
-  backdrop-filter: blur(12px);
-  transition: all .35s cubic-bezier(.16,1,.3,1) !important;
-}
-body.portfolio-page .filter-btn:hover {
-  color: var(--pf-accent-light) !important;
-  border-color: var(--pf-border-active) !important;
-  background: rgba(168,85,247,0.08) !important;
-  transform: translateY(-2px);
-}
-body.portfolio-page .filter-btn.active {
-  background: var(--pf-gradient) !important;
-  color: #fff !important;
-  border-color: transparent !important;
-  box-shadow: 0 8px 24px -4px var(--pf-accent-glow) !important;
-  transform: translateY(-2px);
-}
-
-/* --- Portfolio Cards --- */
-body.portfolio-page .pf-card {
-  background: var(--pf-card) !important;
-  border: 1px solid var(--pf-border) !important;
-  backdrop-filter: blur(16px);
-  transition: all .45s cubic-bezier(.16,1,.3,1) !important;
-  position: relative;
-  overflow: hidden;
-}
-body.portfolio-page .pf-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: var(--pf-gradient);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  transition: opacity .45s ease;
-  z-index: 1;
-  pointer-events: none;
-}
-body.portfolio-page .pf-card:hover::before { opacity: 1; }
-body.portfolio-page .pf-card:hover {
-  transform: translateY(-12px) scale(1.02) !important;
-  box-shadow: var(--pf-shadow-hover) !important;
-  border-color: transparent !important;
-}
-
-body.portfolio-page .pf-thumb .img-placeholder {
-  background: var(--pf-bg-alt) !important;
-}
-body.portfolio-page .pf-thumb .img-placeholder.shimmer {
-  background: linear-gradient(110deg, #14102A 30%, #1E1840 50%, #14102A 70%) !important;
-  background-size: 200% 100% !important;
-  animation: pf-shimmer 2s infinite !important;
-}
-@keyframes pf-shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-body.portfolio-page .pf-thumb .ph-icon { color: var(--pf-accent) !important; }
-body.portfolio-page .pf-thumb .ph-label { color: var(--pf-text-secondary) !important; }
-
-body.portfolio-page .pf-overlay {
-  background: linear-gradient(180deg, transparent 30%, rgba(13,10,26,0.9)) !important;
-}
-body.portfolio-page .pf-tags span {
-  background: rgba(168,85,247,0.2) !important;
-  color: var(--pf-accent-light) !important;
-  border: 1px solid rgba(168,85,247,0.3);
-  backdrop-filter: blur(8px);
-}
-
-body.portfolio-page .pf-body h3 { color: #fff !important; }
-body.portfolio-page .pf-body p { color: var(--pf-text-secondary) !important; }
-
-body.portfolio-page .pf-btns a {
-  border: 1px solid var(--pf-border) !important;
-  color: var(--pf-text) !important;
-  transition: all .3s ease !important;
-}
-body.portfolio-page .pf-btns a:hover {
-  border-color: var(--pf-accent) !important;
-  color: var(--pf-accent-light) !important;
-}
-body.portfolio-page .pf-btns a.solid {
-  background: var(--pf-gradient) !important;
-  color: #fff !important;
-  border-color: transparent !important;
-  box-shadow: 0 6px 20px -4px var(--pf-accent-glow);
-}
-body.portfolio-page .pf-btns a.solid:hover {
-  box-shadow: 0 10px 30px -4px var(--pf-accent-glow);
-}
-
-/* --- Case Studies --- */
-body.portfolio-page #case-studies {
-  background: linear-gradient(180deg, transparent, rgba(124,58,237,0.06), transparent) !important;
-}
-body.portfolio-page .cs-card {
-  background: var(--pf-card) !important;
-  border: 1px solid var(--pf-border) !important;
-  backdrop-filter: blur(16px);
-  transition: all .4s ease !important;
-}
-body.portfolio-page .cs-card:hover {
-  border-color: var(--pf-border-active) !important;
-  box-shadow: var(--pf-shadow) !important;
-}
-body.portfolio-page .cs-banner .img-placeholder {
-  background: linear-gradient(135deg, #1E1840, #14102A) !important;
-}
-body.portfolio-page .cs-banner .ph-icon { color: var(--pf-accent) !important; }
-body.portfolio-page .cs-banner .ph-label { color: var(--pf-text-secondary) !important; }
-body.portfolio-page .cs-content .cs-tag { color: var(--pf-accent-light) !important; }
-body.portfolio-page .cs-content h3 { color: #fff !important; }
-body.portfolio-page .cs-step b { color: var(--pf-accent-light) !important; }
-body.portfolio-page .cs-step p { color: var(--pf-text-secondary) !important; }
-body.portfolio-page .cs-result {
-  background: rgba(168,85,247,0.12) !important;
-  border: 1px solid rgba(168,85,247,0.3) !important;
-  color: var(--pf-accent-light) !important;
-}
-
-/* --- Stats Counter (New Section) --- */
+/* --- Stats Counter --- */
 .pf-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -291,9 +24,9 @@ body.portfolio-page .cs-result {
 .pf-stat-card {
   text-align: center;
   padding: 36px 20px;
-  border-radius: 24px;
-  background: var(--pf-card);
-  border: 1px solid var(--pf-border);
+  border-radius: var(--radius-card);
+  background: var(--card-glass);
+  border: 1px solid var(--border);
   backdrop-filter: blur(12px);
   transition: all .4s ease;
   position: relative;
@@ -306,19 +39,19 @@ body.portfolio-page .cs-result {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: var(--pf-gradient);
+  background: var(--grad);
   border-radius: 0 0 4px 4px;
 }
 .pf-stat-card:hover {
   transform: translateY(-6px);
-  border-color: var(--pf-border-active);
-  box-shadow: var(--pf-shadow);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-hover);
 }
 .pf-stat-number {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-size: 42px;
   font-weight: 800;
-  background: var(--pf-gradient);
+  background: var(--grad-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -327,8 +60,8 @@ body.portfolio-page .cs-result {
 }
 .pf-stat-label {
   font-size: 13.5px;
-  color: var(--pf-text-secondary);
-  font-family: 'Inter', sans-serif;
+  color: var(--text-secondary);
+  font-family: var(--font-alt);
   font-weight: 500;
 }
 
@@ -340,8 +73,8 @@ body.portfolio-page .cs-result {
 .pf-cta-box {
   padding: 60px 40px;
   border-radius: 32px;
-  background: var(--pf-gradient-soft);
-  border: 1px solid var(--pf-border);
+  background: linear-gradient(135deg, rgba(166,124,82,0.08) 0%, rgba(217,197,178,0.12) 100%);
+  border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
@@ -350,25 +83,25 @@ body.portfolio-page .cs-result {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle 200px at 20% 50%, rgba(124,58,237,0.15), transparent),
-    radial-gradient(circle 200px at 80% 50%, rgba(232,121,249,0.1), transparent);
+    radial-gradient(circle 200px at 20% 50%, rgba(166,124,82,0.1), transparent),
+    radial-gradient(circle 200px at 80% 50%, rgba(217,197,178,0.08), transparent);
 }
 .pf-cta-box h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 16px;
   position: relative;
 }
 .pf-cta-box h2 span {
-  background: var(--pf-gradient);
+  background: var(--grad-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .pf-cta-box p {
-  color: var(--pf-text-secondary);
+  color: var(--text-secondary);
   font-size: 16px;
   max-width: 500px;
   margin: 0 auto 32px;
@@ -381,48 +114,22 @@ body.portfolio-page .cs-result {
   gap: 12px;
   padding: 16px 40px;
   border-radius: 100px;
-  background: var(--pf-gradient);
+  background: var(--grad);
   color: #fff;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
   transition: all .4s cubic-bezier(.16,1,.3,1);
-  box-shadow: 0 8px 28px -6px var(--pf-accent-glow);
+  box-shadow: var(--shadow-soft);
   position: relative;
 }
 .pf-cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 40px -6px var(--pf-accent-glow);
+  box-shadow: var(--shadow-hover);
 }
 .pf-cta-btn i { transition: transform .3s ease; }
 .pf-cta-btn:hover i { transform: translateX(4px); }
-
-/* --- Footer override --- */
-body.portfolio-page footer {
-  background: var(--pf-bg-alt) !important;
-  border-top: 1px solid var(--pf-border);
-}
-body.portfolio-page footer p,
-body.portfolio-page footer a,
-body.portfolio-page footer h5 { color: var(--pf-text-secondary) !important; }
-body.portfolio-page footer a:hover { color: var(--pf-accent-light) !important; }
-body.portfolio-page .footer-bottom { border-color: var(--pf-border) !important; }
-
-/* --- WhatsApp & Back-top --- */
-body.portfolio-page #whatsapp-float {
-  background: var(--pf-gradient) !important;
-  box-shadow: 0 8px 24px -4px var(--pf-accent-glow) !important;
-}
-body.portfolio-page #back-top {
-  background: var(--pf-card-solid) !important;
-  border: 1px solid var(--pf-border) !important;
-  color: var(--pf-accent-light) !important;
-}
-
-/* --- Cursor --- */
-body.portfolio-page #cursor-glow { background: radial-gradient(circle, rgba(168,85,247,0.12), transparent 70%) !important; }
-body.portfolio-page #cursor-dot { background: var(--pf-accent) !important; }
 
 /* --- Floating Particles --- */
 .pf-particles {
@@ -445,6 +152,11 @@ body.portfolio-page #cursor-dot { background: var(--pf-accent) !important; }
   100% { opacity: 0; transform: translateY(-400px) scale(1); }
 }
 
+/* --- Case Studies background --- */
+#case-studies {
+  background: linear-gradient(180deg, transparent, rgba(217,197,178,0.12), transparent);
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .pf-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -455,7 +167,7 @@ body.portfolio-page #cursor-dot { background: var(--pf-accent) !important; }
 }
 </style>
 </head>
-<body class="portfolio-page">
+<body>
 <div class="page-wipe"></div>
 
 <div id="loader" class="global-preloader">
@@ -640,7 +352,7 @@ body.portfolio-page #cursor-dot { background: var(--pf-accent) !important; }
 (function() {
   const container = document.getElementById('pfParticles');
   if (!container) return;
-  const colors = ['rgba(124,58,237,0.5)', 'rgba(168,85,247,0.4)', 'rgba(232,121,249,0.35)', 'rgba(192,132,252,0.3)'];
+  const colors = ['rgba(166,124,82,0.5)', 'rgba(183,144,104,0.4)', 'rgba(217,197,178,0.35)', 'rgba(141,103,70,0.3)'];
   for (let i = 0; i < 20; i++) {
     const p = document.createElement('div');
     p.className = 'pf-particle';
