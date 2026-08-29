@@ -992,8 +992,10 @@ if (parallaxImg) {
     "": "Home",
     "about.html": "About",
     "services.html": "Services",
-    "social-media.html": "Social Media",
+    "portfolio.html": "Portfolio",
     "gallery.html": "Gallery",
+    "social-media.html": "Social Media",
+    "blog.html": "Blog",
     "contact.html": "Contact"
   };
   const activeLabel = map[path];
