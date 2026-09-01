@@ -114,8 +114,8 @@
   <div class="glow-orb o2"></div>
   <div class="glow-orb o3"></div>
   
-  <div class="container hero-container">
-    <div class="hero-text">
+  <div class="container hero-container" style="display: flex; align-items: center; gap: 48px; flex-wrap: wrap;">
+    <div class="hero-text" style="flex: 1; min-width: 320px;">
 
       
       <h1 class="hero-name reveal in" style="font-size: clamp(40px, 5.8vw, 76px); max-width: 900px; margin-bottom: 20px;">
@@ -153,6 +153,14 @@
         <div><b><span class="count-up" data-target="98">0</span>%</b><span>Client Satisfaction</span></div>
       </div>
     </div>
+
+    <!-- PHOTO SPOT: Hero Image - Replace 'hero-image.png' with your hero photo -->
+    <div class="reveal-zoom" style="flex: 0 0 auto; max-width: 420px; width: 100%;">
+      <div style="border-radius: var(--radius-card); overflow: hidden; border: 3px solid var(--btn-primary); box-shadow: var(--shadow-hover); aspect-ratio: 4/5; background: rgba(166,124,82,0.06); display: flex; align-items: center; justify-content: center;">
+        <!-- 📷 HERO PHOTO: Apni photo yahan add karo - file name: hero-image.png -->
+        <img src="hero-image.png" alt="AbhiFY Digital Marketing" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=padding:40px;text-align:center;color:var(--text-secondary)><i class=fa-solid\ fa-image style=font-size:48px;margin-bottom:12px;display:block;opacity:0.3></i><p style=font-size:13px;opacity:0.5>hero-image.png</p></div>';">
+      </div>
+    </div>
   </div>
   <div class="scroll-indicator"><div class="mouse"><i></i></div>Scroll</div>
 </section>
@@ -164,12 +172,13 @@
       Trusted By 50+ Growing Businesses &amp; Brands Across Varanasi &amp; India
     </p>
     <div class="trust-logo-strip">
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-store"></i><span>Client 1</span></div>
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-cart-shopping"></i><span>Client 2</span></div>
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-user-doctor"></i><span>Client 3</span></div>
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-graduation-cap"></i><span>Client 4</span></div>
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-building"></i><span>Client 5</span></div>
-      <div class="trust-logo-box shimmer" title="Replace with client logo"><i class="fa-solid fa-briefcase"></i><span>Client 6</span></div>
+      <!-- 📷 CLIENT LOGOS: Apne client logos yahan add karo - files: client1-logo.png se client6-logo.png -->
+      <div class="trust-logo-box shimmer" title="Client 1 Logo"><img src="client1-logo.png" alt="Client 1" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-store></i><span>Client 1</span>';"></div>
+      <div class="trust-logo-box shimmer" title="Client 2 Logo"><img src="client2-logo.png" alt="Client 2" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-cart-shopping></i><span>Client 2</span>';"></div>
+      <div class="trust-logo-box shimmer" title="Client 3 Logo"><img src="client3-logo.png" alt="Client 3" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-user-doctor></i><span>Client 3</span>';"></div>
+      <div class="trust-logo-box shimmer" title="Client 4 Logo"><img src="client4-logo.png" alt="Client 4" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-graduation-cap></i><span>Client 4</span>';"></div>
+      <div class="trust-logo-box shimmer" title="Client 5 Logo"><img src="client5-logo.png" alt="Client 5" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-building></i><span>Client 5</span>';"></div>
+      <div class="trust-logo-box shimmer" title="Client 6 Logo"><img src="client6-logo.png" alt="Client 6" style="width: 100%; height: 100%; object-fit: contain; padding: 8px;" onerror="this.outerHTML='<i class=fa-solid\ fa-briefcase></i><span>Client 6</span>';"></div>
     </div>
   </div>
 </section>
@@ -186,6 +195,10 @@
       
       <div class="service-card glass-card reveal" style="position: relative;">
         <span style="position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 700; background: rgba(166, 124, 82, 0.1); color: var(--btn-primary); padding: 4px 10px; border-radius: 100px; font-family: var(--font-alt);">TOP ROI</span>
+        <!-- 📷 SERVICE PHOTO: SEO illustration - file: service-seo.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-seo.png" alt="SEO Service" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
         <h3>Search Engine Optimization (SEO)</h3>
         <p>Dominate Google search results. Drive targeted organic traffic, build domain authority, and generate continuous inbound leads.</p>
@@ -194,6 +207,10 @@
 
       <div class="service-card glass-card reveal" style="position: relative;">
         <span style="position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 700; background: rgba(166, 124, 82, 0.1); color: var(--btn-primary); padding: 4px 10px; border-radius: 100px; font-family: var(--font-alt);">INSTANT LEADS</span>
+        <!-- 📷 SERVICE PHOTO: Google Ads illustration - file: service-google-ads.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-google-ads.png" alt="Google Ads Service" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-brands fa-google"></i></div>
         <h3>Google Ads Management</h3>
         <p>High-conversion PPC search, display, and shopping campaigns tailored to minimize CPA and maximize Return on Ad Spend (ROAS).</p>
@@ -202,6 +219,10 @@
 
       <div class="service-card glass-card reveal" style="position: relative;">
         <span style="position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 700; background: rgba(166, 124, 82, 0.1); color: var(--btn-primary); padding: 4px 10px; border-radius: 100px; font-family: var(--font-alt);">HIGH ENGAGEMENT</span>
+        <!-- 📷 SERVICE PHOTO: Meta Ads illustration - file: service-meta-ads.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-meta-ads.png" alt="Meta Ads Service" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
         <h3>Meta Ads (FB &amp; Insta)</h3>
         <p>Hyper-targeted Facebook &amp; Instagram ad campaigns with creative storytelling, retargeting funnels, and high-converting ad copy.</p>
@@ -209,6 +230,10 @@
       </div>
 
       <div class="service-card glass-card reveal">
+        <!-- 📷 SERVICE PHOTO: SMM illustration - file: service-smm.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-smm.png" alt="Social Media Marketing" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
         <h3>Social Media Marketing</h3>
         <p>Build a thriving online community with strategic content creation, brand positioning, and social media account management.</p>
@@ -216,6 +241,10 @@
       </div>
 
       <div class="service-card glass-card reveal">
+        <!-- 📷 SERVICE PHOTO: Web Design illustration - file: service-web-design.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-web-design.png" alt="Website Design" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
         <h3>Website Design &amp; Dev</h3>
         <p>Ultra-fast, mobile-optimized, conversion-driven websites crafted with clean code, sleek UI/UX, and SEO-friendly architecture.</p>
@@ -223,6 +252,10 @@
       </div>
 
       <div class="service-card glass-card reveal">
+        <!-- 📷 SERVICE PHOTO: Branding illustration - file: service-branding.png -->
+        <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 18px; background: rgba(166,124,82,0.05);">
+          <img src="service-branding.png" alt="Graphic Design & Branding" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
         <h3>Graphic Design &amp; Branding</h3>
         <p>Stunning brand identity, logos, marketing banners, and visual assets that make your business instantly recognizable.</p>
@@ -373,8 +406,9 @@
         <div class="testi-stars" style="margin-bottom:14px;color:#D97706; font-size: 16px;">★★★★★</div>
         <p style="font-size:15px;line-height:1.75;color:var(--text-primary);margin-bottom:24px;">"Working with AbhiFY completely transformed our digital strategy. Our organic leads doubled within 4 months of SEO &amp; Google Ads optimization!"</p>
         <div style="display:flex;align-items:center;gap:14px;">
+          <!-- 📷 TESTIMONIAL PHOTO 1: file: testimonial1.jpg -->
           <div class="img-placeholder shimmer" style="width:50px;height:50px;border-radius:50%;overflow:hidden; flex-shrink: 0; border: 2px solid var(--btn-primary);">
-            <i class="fa-solid fa-user ph-icon" style="font-size:18px;"></i>
+            <img src="testimonial1.jpg" alt="Rahul Sharma" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='<i class=fa-solid\ fa-user\ ph-icon style=font-size:18px></i>';">
           </div>
           <div>
             <b style="font-family:var(--font-display);font-size:15px;color:var(--text-primary);display:block;">Rahul Sharma</b>
@@ -388,8 +422,9 @@
         <div class="testi-stars" style="margin-bottom:14px;color:#D97706; font-size: 16px;">★★★★★</div>
         <p style="font-size:15px;line-height:1.75;color:var(--text-primary);margin-bottom:24px;">"Clear communication, fast turnaround, and real results. AbhiFY understood exactly what our brand needed and delivered beyond expectations."</p>
         <div style="display:flex;align-items:center;gap:14px;">
+          <!-- 📷 TESTIMONIAL PHOTO 2: file: testimonial2.jpg -->
           <div class="img-placeholder shimmer" style="width:50px;height:50px;border-radius:50%;overflow:hidden; flex-shrink: 0; border: 2px solid var(--btn-primary);">
-            <i class="fa-solid fa-user ph-icon" style="font-size:18px;"></i>
+            <img src="testimonial2.jpg" alt="Priya Patel" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='<i class=fa-solid\ fa-user\ ph-icon style=font-size:18px></i>';">
           </div>
           <div>
             <b style="font-family:var(--font-display);font-size:15px;color:var(--text-primary);display:block;">Priya Patel</b>
@@ -403,8 +438,9 @@
         <div class="testi-stars" style="margin-bottom:14px;color:#D97706; font-size: 16px;">★★★★★</div>
         <p style="font-size:15px;line-height:1.75;color:var(--text-primary);margin-bottom:24px;">"Our website traffic and Meta Ad ROAS improved drastically! The team is responsive, professional, and genuinely cares about business growth."</p>
         <div style="display:flex;align-items:center;gap:14px;">
+          <!-- 📷 TESTIMONIAL PHOTO 3: file: testimonial3.jpg -->
           <div class="img-placeholder shimmer" style="width:50px;height:50px;border-radius:50%;overflow:hidden; flex-shrink: 0; border: 2px solid var(--btn-primary);">
-            <i class="fa-solid fa-user ph-icon" style="font-size:18px;"></i>
+            <img src="testimonial3.jpg" alt="Vikas Verma" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='<i class=fa-solid\ fa-user\ ph-icon style=font-size:18px></i>';">
           </div>
           <div>
             <b style="font-family:var(--font-display);font-size:15px;color:var(--text-primary);display:block;">Vikas Verma</b>
