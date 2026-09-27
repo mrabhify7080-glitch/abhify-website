@@ -1,0 +1,134 @@
+/* ==========================================================================
+   AbhiFY — Signature Drawing Loading Animation Engine (v1.0)
+   Pure Black Screen • Crisp White Handwriting Strokes • Stroke-by-Stroke
+   ========================================================================== */
+
+#abhify-signature-loader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  user-select: none;
+}
+
+#abhify-signature-loader.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.signature-canvas-wrap {
+  width: 90%;
+  max-width: 880px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Base SVG styling */
+.abhify-sig-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+}
+
+/* Stroke defaults */
+.sig-stroke {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.sig-stroke-thick {
+  stroke-width: 3.8px;
+}
+
+.sig-stroke-thin {
+  stroke-width: 2.2px;
+}
+
+.sig-dot {
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sig-dot.drawn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Paper Plane specific */
+.sig-plane-path {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 2.4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Subtle glow pulse on complete hold */
+@keyframes signatureHoldPulse {
+  0% { filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3)); }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.65)); }
+  100% { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)); }
+}
+
+.signature-complete {
+  animation: signatureHoldPulse 0.7s ease-in-out forwards;
+}
+
+/* Replay button for testing */
+.sig-replay-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.2s ease;
+}
+
+#abhify-signature-loader:hover .sig-replay-btn {
+  opacity: 0.6;
+}
+
+.sig-replay-btn:hover {
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  #abhify-signature-loader {
+    transition: opacity 0.3s ease;
+  }
+  .sig-stroke {
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+}
