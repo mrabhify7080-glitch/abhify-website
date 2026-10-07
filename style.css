@@ -4714,11 +4714,11 @@ img, svg, video, iframe, canvas {
 }
 
 .brand-signature-img {
-  height: 48px;
-  max-width: 180px;
-  width: auto;
-  object-fit: contain;
+  height: 46px;
+  width: 46px;
+  object-fit: cover;
   display: block;
+  border-radius: 50%;
 }
 
 /* Nav Links Minimal */
