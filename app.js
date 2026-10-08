@@ -157,7 +157,7 @@ const CASE_STUDIES = [
 
 const TESTIMONIALS = [
   { name:"Aayush Sharma", role:"Founder, The melofy.com", text:"A beautiful, modern, and professional website that perfectly represents my musical identity. Great design, smooth experience, and excellent attention to detail.", stars:5 },
-  { name:"Priya Patel", role:"Founder, StyleHive", text:"The Meta Ads campaigns were game-changing. We saw a 5× return on our ad spend within the first two months. Incredible work!", stars:5 },
+  { name:"Anshu Dubey", role:"Director, anshuproperties.com", text:"The website designed for Anshu Property has a modern, professional look and presents property listings in an organized and attractive way. Great choice for real estate brands looking to build a strong digital identity.", stars:5 },
   { name:"Amit Verma", role:"Director, BuildRight", text:"Professional, data-driven and always available. AbhiFY redesigned our website and it now converts 3× more leads than before.", stars:5 },
   { name:"Sneha Kapoor", role:"Marketing Head, FreshBite", text:"Our social media went from dead to thriving. Engagement is up 400% and we're getting quality leads every single day.", stars:5 }
 ];
