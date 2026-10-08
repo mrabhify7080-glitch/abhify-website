@@ -5411,9 +5411,9 @@ nav .nav-links li a::after {
   visibility: visible;
 }
 
-/* Luxury Burger Button */
+/* Luxury Burger Button (Mobile / Tablet Only) */
 .burger {
-  display: flex !important;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -5431,35 +5431,6 @@ nav .nav-links li a::after {
 
 .burger:hover {
   background: #FFFFFF;
-  border-color: rgba(198, 147, 75, 0.4);
-  transform: scale(1.05);
-}
-
-.burger span {
-  width: 20px;
-  height: 2px;
-  background: #121417;
-  border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.burger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  background: #C6934B;
-}
-
-.burger.open span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(10px);
-}
-
-.burger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-  background: #C6934B;
-}
-
-.burger:hover {
-  background: rgba(255, 255, 255, 1);
   border-color: rgba(198, 147, 75, 0.4);
   transform: scale(1.05);
 }
