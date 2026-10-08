@@ -4948,12 +4948,18 @@ nav .nav-links li a::after {
 }
 
 /* ---------- Hero Section (Real Estate Theme - Exact Match to Reference) ---------- */
+#hero.hero-realestate,
 .hero-realestate {
   position: relative;
   background-color: #FAF8F4;
-  min-height: auto;
+  background-image: 
+    linear-gradient(to right, rgba(198, 147, 75, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 147, 75, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 105px 0 50px 0;
   overflow: hidden;
 }
@@ -4965,10 +4971,8 @@ nav .nav-links li a::after {
   pointer-events: none;
   background-image: 
     radial-gradient(circle at 15% 25%, rgba(198, 147, 75, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(198, 147, 75, 0.07) 0%, transparent 50%),
-    linear-gradient(rgba(18, 20, 23, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 20, 23, 0.032) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(circle at 85% 75%, rgba(198, 147, 75, 0.07) 0%, transparent 50%);
+  background-size: 100% 100%;
   opacity: 0.85;
 }
 
@@ -5008,7 +5012,7 @@ nav .nav-links li a::after {
 
 .hero-re-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 36px;
   align-items: center;
 }
@@ -5035,7 +5039,7 @@ nav .nav-links li a::after {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8D6746;
+  color: #7A5B3E;
 }
 
 .eyebrow-divider {
@@ -5051,15 +5055,15 @@ nav .nav-links li a::after {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(38px, 4.3vw, 62px);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.06;
   color: #111315;
   letter-spacing: -0.035em;
   margin-bottom: 20px;
 }
 
 .gold-gradient-highlight {
-  color: #B98138;
-  background: linear-gradient(135deg, #B98138 0%, #CA964D 50%, #9E6822 100%);
+  color: #C6934B;
+  background: linear-gradient(135deg, #C6934B 0%, #D8A55B 50%, #A87635 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -5136,7 +5140,7 @@ nav .nav-links li a::after {
 .hero-re-stage {
   position: relative;
   width: 100%;
-  height: 490px;
+  height: 500px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -5155,7 +5159,7 @@ nav .nav-links li a::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-width: 480px;
+  max-width: 490px;
   object-fit: contain;
 }
 
@@ -5184,7 +5188,17 @@ nav .nav-links li a::after {
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 16px 30px rgba(18, 20, 23, 0.15));
-  animation: floatHero 5s ease-in-out infinite;
+}
+
+.stage-ground-shadow {
+  position: absolute;
+  bottom: 0;
+  width: 190px;
+  height: 26px;
+  background: radial-gradient(ellipse at center, rgba(18, 20, 23, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 1;
 }
 
 /* Floating UI Cards (Exact 3 Cards from Reference) */
@@ -5199,7 +5213,6 @@ nav .nav-links li a::after {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  animation: floatCard 6s ease-in-out infinite;
 }
 
 .metric-card-header {
@@ -5254,7 +5267,6 @@ nav .nav-links li a::after {
   top: 65px;
   right: -20px;
   width: 170px;
-  animation-delay: -2s;
 }
 
 .mini-sparkline {
@@ -5274,7 +5286,6 @@ nav .nav-links li a::after {
   bottom: 85px;
   right: -25px;
   width: 175px;
-  animation-delay: -4s;
 }
 
 .growth-bar-group {
@@ -5402,20 +5413,49 @@ nav .nav-links li a::after {
 
 /* Luxury Burger Button */
 .burger {
-  display: none;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(198, 147, 75, 0.2);
   align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(18, 20, 23, 0.08);
   cursor: pointer;
   z-index: 1006;
-  box-shadow: 0 2px 8px rgba(18, 20, 23, 0.05);
+  box-shadow: 0 4px 14px rgba(18, 20, 23, 0.06);
   transition: all 0.3s ease;
+}
+
+.burger:hover {
+  background: #FFFFFF;
+  border-color: rgba(198, 147, 75, 0.4);
+  transform: scale(1.05);
+}
+
+.burger span {
+  width: 20px;
+  height: 2px;
+  background: #121417;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: #C6934B;
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: #C6934B;
 }
 
 .burger:hover {
