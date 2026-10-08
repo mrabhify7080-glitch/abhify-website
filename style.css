@@ -808,12 +808,11 @@ header.scrolled .brand-logo-img {
 
 /* ---------- Hero ---------- */
 #hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  min-height: auto;
   position: relative;
   overflow: hidden;
-  padding-top: 170px;
+  padding-top: 80px;
+  padding-bottom: 25px;
 }
 #hero-canvas {
   position: absolute;
@@ -5496,13 +5495,13 @@ nav .nav-links li a::after {
 
 @media (max-width: 991px) {
   section {
-    padding: 44px 0 !important;
+    padding: 38px 0 !important;
   }
   .container {
     padding: 0 20px;
   }
   .section-sub {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     font-size: 14.5px;
   }
   .nav-links-modern,
@@ -5513,15 +5512,18 @@ nav .nav-links li a::after {
     display: flex;
   }
   .header-container {
-    padding: 0 20px;
+    padding: 0 18px;
   }
+  #hero,
+  #hero.hero-realestate,
   .hero-realestate {
-    padding: 82px 0 24px 0 !important;
-    min-height: auto;
+    padding: 76px 0 16px 0 !important;
+    min-height: auto !important;
+    display: block !important;
   }
   .hero-re-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
   .hero-re-content {
     align-items: center;
@@ -5529,24 +5531,24 @@ nav .nav-links li a::after {
   }
   .hero-re-title {
     font-size: 32px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .hero-re-subtext {
     font-size: 14.5px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .hero-re-actions {
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
   .hero-re-stage {
-    height: 350px;
-    margin-top: 8px;
+    height: 320px;
+    margin-top: 6px;
   }
   .re-character-img {
-    max-height: 330px;
+    max-height: 300px;
   }
   .card-visibility {
     top: 15px;
@@ -5578,17 +5580,17 @@ nav .nav-links li a::after {
     margin-bottom: 28px;
   }
   footer {
-    padding: 45px 0 20px;
+    padding: 40px 0 20px;
   }
   .footer-cta-box {
-    padding: 36px 20px;
-    margin-bottom: 30px;
+    padding: 32px 18px;
+    margin-bottom: 26px;
   }
 }
 
 @media (max-width: 600px) {
   section {
-    padding: 32px 0 !important;
+    padding: 26px 0 !important;
   }
   .container {
     padding: 0 14px;
@@ -5596,144 +5598,179 @@ nav .nav-links li a::after {
   .section-tag {
     font-size: 11px;
     padding: 4px 12px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .section-title {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 23px;
+    margin-bottom: 6px;
     line-height: 1.2;
   }
   .section-sub {
     font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 18px;
+    line-height: 1.5;
+    margin-bottom: 16px;
   }
   .brand-logo-frame {
-    width: 36px;
-    height: 36px;
+    width: 35px;
+    height: 35px;
   }
   .brand-name-title {
-    font-size: 16px;
+    font-size: 15.5px;
   }
   .brand-badge-subtitle {
-    font-size: 8px;
+    font-size: 7.5px;
     letter-spacing: 0.12em;
   }
+  #hero,
+  #hero.hero-realestate,
   .hero-realestate {
-    padding: 72px 0 16px 0 !important;
+    padding: 64px 0 10px 0 !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+  .hero-re-container {
+    padding: 0 12px;
+  }
+  .hero-re-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
   .hero-re-eyebrow {
-    margin-bottom: 8px;
-    gap: 8px;
+    margin-bottom: 6px;
+    gap: 6px;
   }
   .hero-re-title {
     font-size: 26px;
     line-height: 1.15;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .hero-re-subtext {
     font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 16px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    max-width: 100%;
   }
   .hero-re-actions {
-    gap: 10px;
+    gap: 8px;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
   }
   .btn-re-audit,
   .btn-re-outline {
-    width: 100%;
+    flex: 1;
+    max-width: 170px;
     justify-content: center;
-    padding: 11px 20px;
-    font-size: 13.5px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    text-align: center;
   }
   .hero-re-stage {
-    height: 270px;
+    height: 250px;
     margin-top: 4px;
+    margin-bottom: 0;
+  }
+  .stage-backdrop .blueprint-vector {
+    max-width: 300px;
+  }
+  .stage-glow {
+    width: 220px;
+    height: 220px;
+  }
+  .character-wrapper {
+    max-height: 250px;
   }
   .re-character-img {
-    max-height: 255px;
+    max-height: 240px;
   }
   .floating-metric-card {
-    padding: 6px 10px;
+    padding: 5px 8px;
     border-radius: 8px;
-    gap: 4px;
+    gap: 3px;
+  }
+  .metric-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 9.5px;
+    border-radius: 4px;
   }
   .metric-label {
-    font-size: 10.5px;
+    font-size: 10px;
   }
   .card-visibility {
-    width: 110px;
-    top: 5px;
-    left: 0;
+    width: 104px;
+    top: 6px;
+    left: 0px;
   }
   .card-enquiries {
-    width: 115px;
-    top: 5px;
-    right: 0;
+    width: 108px;
+    top: 6px;
+    right: 0px;
   }
   .card-growth {
-    display: none;
+    width: 106px;
+    bottom: 12px;
+    right: 0px;
+    display: flex;
   }
   .services-grid,
   .preview-services-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
   .service-card {
-    padding: 18px 14px;
+    padding: 16px 14px;
   }
   .service-card h3 {
-    font-size: 17px;
-    margin-bottom: 6px;
+    font-size: 16.5px;
+    margin-bottom: 5px;
   }
   .service-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
-    margin-bottom: 12px;
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+    margin-bottom: 10px;
   }
   .why-grid {
     grid-template-columns: 1fr !important;
-    gap: 12px;
+    gap: 10px;
   }
   .why-card {
-    padding: 16px 14px !important;
+    padding: 15px 12px !important;
   }
   .why-card h4 {
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 15.5px;
+    margin-bottom: 5px;
   }
   .testi-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
   .testi-grid .glass-card {
-    padding: 18px 14px !important;
+    padding: 16px 14px !important;
   }
   .faq-question {
-    padding: 14px 16px;
-    font-size: 14.5px;
+    padding: 12px 14px;
+    font-size: 14px;
   }
   .faq-answer {
-    padding: 0 16px;
-    font-size: 13.5px;
+    padding: 0 14px;
+    font-size: 13px;
   }
   .faq-item.active .faq-answer {
-    padding-bottom: 14px;
+    padding-bottom: 12px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 18px;
   }
   .footer-cta-box {
-    padding: 24px 14px !important;
-    margin-bottom: 22px;
+    padding: 22px 14px !important;
+    margin-bottom: 18px;
   }
   footer {
-    padding: 30px 0 16px;
+    padding: 26px 0 14px;
   }
 }
 
