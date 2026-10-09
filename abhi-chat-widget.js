@@ -828,11 +828,19 @@
     let multiSelections = [];
     let isOpen = false;
     let hasStarted = false;
+    let hasUserClosed = false;
 
     // Show badge after 3 seconds
     setTimeout(() => {
       if (!isOpen) badge.classList.add("abhi-show");
     }, 3000);
+
+    // Auto-open chatbot 20 seconds after page load
+    setTimeout(() => {
+      if (!isOpen && !hasUserClosed) {
+        openChat();
+      }
+    }, 20000);
 
     // Lock/Unlock background scroll on mobile
     function lockBodyScroll() {
@@ -844,8 +852,8 @@
       document.body.style.overflow = "";
     }
 
-    // Open/Close
-    launcher.addEventListener("click", () => {
+    function openChat() {
+      if (isOpen) return;
       isOpen = true;
       launcher.classList.add("abhi-open");
       win.classList.add("abhi-visible");
@@ -857,14 +865,19 @@
           showQuestionUI(QUESTIONS[0]);
         });
       }
-    });
+    }
 
-    closeBtn.addEventListener("click", () => {
+    function closeChat() {
       isOpen = false;
+      hasUserClosed = true;
       launcher.classList.remove("abhi-open");
       win.classList.remove("abhi-visible");
       unlockBodyScroll();
-    });
+    }
+
+    // Open/Close
+    launcher.addEventListener("click", openChat);
+    closeBtn.addEventListener("click", closeChat);
 
     // Close on Escape
     document.addEventListener("keydown", (e) => {
