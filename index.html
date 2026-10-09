@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -418,50 +418,57 @@
 </section>
 
 <!-- ================= MEET THE FOUNDER SECTION (PHOTO SPOT) ================= -->
-<section id="meet-founder" style="padding: 50px 0; background: linear-gradient(180deg, rgba(166, 124, 82, 0.03) 0%, rgba(217, 197, 178, 0.08) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section id="meet-founder" class="meet-founder-section">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: center;">
+    <div class="meet-founder-grid">
       
       <!-- Photo Frame Container -->
-      <div class="reveal-zoom" style="display: flex; justify-content: center;">
-        <div class="about-img-wrap" style="position: relative; max-width: 340px; width: 100%; aspect-ratio: 4/5;">
+      <div class="reveal-zoom" style="display: flex; justify-content: center; width: 100%;">
+        <div class="meet-founder-frame-wrap">
           <!-- PHOTO SPOT: Abhishek Founder Profile Image (Full Frame) -->
-          <div class="profile-bg-container" style="border-radius: 18px; overflow: hidden; width: 100%; height: 100%; border: 2.5px solid var(--btn-primary); box-shadow: var(--shadow-hover);">
-            <img src="profile.png" alt="Abhishek - Founder of AbhiFY" class="about-profile-img" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+          <div class="meet-founder-frame">
+            <img src="profile.png" alt="Abhishek - Founder of AbhiFY" class="meet-founder-img">
           </div>
-          <div class="about-badge" style="position: absolute; bottom: -14px; right: -14px; background: var(--card); border: 1px solid var(--border); padding: 10px 16px; border-radius: 14px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-user-check" style="font-size: 20px; color: var(--btn-primary);"></i>
+          <div class="meet-founder-badge">
+            <div class="founder-badge-icon">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
             <div>
-              <b style="display: block; font-family: var(--font-display); font-size: 14px; color: var(--text-primary);">Abhishek</b>
-              <span style="font-size: 11.5px; color: var(--text-secondary); font-family: var(--font-alt);">Founder &amp; Digital Strategist</span>
+              <b style="display: block; font-family: var(--font-display); font-size: 15px; color: var(--text-primary); margin-bottom: 2px;">Abhishek</b>
+              <span style="font-size: 12px; color: var(--text-secondary); font-family: var(--font-alt);">Founder &amp; Digital Strategist</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Bio / Content -->
-      <div class="reveal">
-        <span class="section-tag"><i class="fa-solid fa-user-gear" style="margin-right: 6px;"></i> Meet The Founder</span>
-        <h2 class="section-title">Hi, I'm <span>Abhishek</span></h2>
-        <p style="font-size: 15px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 12px;">
-          As the lead digital strategist behind <strong>AbhiFY</strong>, I help local KANPUR & UNNAO businesses and pan-India brands transition from unpredictable marketing to data-backed, revenue-generating acquisition funnels.
+      <div class="reveal meet-founder-content">
+        <span class="section-tag" style="margin-bottom: 14px;"><i class="fa-solid fa-user-gear" style="margin-right: 6px;"></i> Meet The Founder</span>
+        <h2 class="section-title" style="font-size: clamp(32px, 3.8vw, 46px); margin-bottom: 20px; text-align: left; line-height: 1.2;">Hi, I'm <span class="gradient-text">Abhishek</span></h2>
+        <p style="font-size: 16.5px; line-height: 1.75; color: var(--text-primary); margin-bottom: 16px; font-weight: 400;">
+          As the lead digital strategist behind <strong>AbhiFY</strong>, I help local KANPUR &amp; UNNAO businesses and pan-India brands transition from unpredictable marketing to data-backed, revenue-generating acquisition funnels.
         </p>
-        <p style="font-size: 14px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 18px;">
-          Whether you need a high-ranking SEO campaign, high-ROAS Google &amp; Meta Ads, or a lightning-fast modern website — you get direct 1-on-1 strategy with me without agency fluff.
+        <p style="font-size: 15px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 24px;">
+          Whether you need a high-ranking SEO campaign, high-ROAS Google &amp; Meta Ads, or a lightning-fast modern website &mdash; you get direct 1-on-1 strategy with me without agency fluff.
         </p>
         
-        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
-          <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-alt); font-size: 13px; font-weight: 600; color: var(--text-primary);">
-            <i class="fa-solid fa-shield-halved" style="color: var(--btn-primary); font-size: 16px;"></i> 3+ Yrs Experience
+        <div class="founder-stats-row" style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px;">
+          <div class="founder-stat-chip">
+            <i class="fa-solid fa-shield-halved" style="color: var(--btn-primary); font-size: 17px;"></i> 3+ Yrs Experience
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-alt); font-size: 13px; font-weight: 600; color: var(--text-primary);">
-            <i class="fa-solid fa-chart-pie" style="color: var(--btn-primary); font-size: 16px;"></i> 50+ Projects Scaled
+          <div class="founder-stat-chip">
+            <i class="fa-solid fa-chart-pie" style="color: var(--btn-primary); font-size: 17px;"></i> 50+ Projects Scaled
           </div>
         </div>
 
-        <a href="about.html" class="btn btn-outline rippleize" style="padding: 11px 24px; font-size: 13.5px;">
-          Read Full Story &rarr;
-        </a>
+        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+          <a href="about.html" class="btn btn-primary rippleize" style="padding: 13px 28px; font-size: 14.5px;">
+            Read Full Story &rarr;
+          </a>
+          <a href="contact.html" class="btn btn-outline rippleize" style="padding: 13px 24px; font-size: 14.5px;">
+            <i class="fa-solid fa-calendar-check" style="margin-right: 6px;"></i> Book 1-on-1 Call
+          </a>
+        </div>
       </div>
 
     </div>
