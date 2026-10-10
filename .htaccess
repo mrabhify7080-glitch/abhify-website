@@ -1,0 +1,24 @@
+# ----------------------------------------------------------------------
+# AbhiFY Static HTML Website Configuration
+# ----------------------------------------------------------------------
+
+# Ensure index.html is strictly preferred over index.php
+DirectoryIndex index.html index.php
+
+# Prevent directory listings
+Options -Indexes
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Proper MIME types for static assets
+<IfModule mod_mime.c>
+    AddType text/html .html .htm
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/webp .webp
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/svg+xml .svg
+    AddType application/xml .xml
+</IfModule>
