@@ -247,9 +247,9 @@ const ABHIFY_DATA = {
       slug: "service-web-design.html",
       name: "Custom Website Design & Development",
       shortDesc: "Ultra-fast, mobile-responsive, conversion-optimized websites built with modern UI/UX design to turn casual visitors into paying clients.",
-      startingPrice: "₹24,999 (One-Time)",
-      regularPrice: "₹40,000",
-      launchOfferPrice: "₹24,999",
+      startingPrice: "₹5,999 (Launch Offer)",
+      regularPrice: "₹11,999",
+      launchOfferPrice: "₹5,999 (One-Time)",
       setupFee: "Zero hidden charges — includes free 1st year domain & SSL setup",
       timeline: "10–14 Business Days from kickoff to launch",
       resultExpectation: "Sub-2 second load times, 90+ Google PageSpeed score, 2x higher inquiry conversion rates",
@@ -354,9 +354,9 @@ const ABHIFY_DATA = {
       slug: "service-branding.html",
       name: "Graphic Design & Brand Identity",
       shortDesc: "Cohesive brand identities, premium vector logos, marketing collateral, and digital asset kits that command premium pricing for your business.",
-      startingPrice: "₹14,999 (Package)",
-      regularPrice: "₹25,000",
-      launchOfferPrice: "₹14,999",
+      startingPrice: "₹2,999 (Launch Offer)",
+      regularPrice: "₹5,999",
+      launchOfferPrice: "₹2,999 (One-Time)",
       setupFee: "All source files & copyright ownership included",
       timeline: "5–8 Business Days",
       resultExpectation: "A complete, modern brand identity ready for digital and print deployment",
@@ -478,12 +478,12 @@ const ABHIFY_DATA = {
 
   // Additional Charges / Add-ons transparently stated
   addOnServices: [
-    { name: "Additional High-Converting Landing Page", price: "₹8,999", desc: "Custom designed, mobile-optimized page with form and analytics tracking" },
-    { name: "Extra Short-Form Reel / Ad Creative Video", price: "₹1,499", desc: "Professional motion graphics, hook writing, subtitles, and color grading" },
-    { name: "WhatsApp Business API & Automation Setup", price: "₹12,999", desc: "Automated greeting, interactive menu, and CRM pipeline connection" },
-    { name: "Speed Optimization & Core Web Vitals Fix", price: "₹6,999", desc: "Guarantee 85+ mobile score on Google PageSpeed Insights" },
-    { name: "Blog Article (1,500+ Words SEO-Optimized)", price: "₹1,999", desc: "Researched, keyword-mapped, formatted with custom header graphics" },
-    { name: "Google Business Profile Recovery / Suspension Help", price: "₹9,999", desc: "Documentation review, Google appeal filing, and verification guidance" }
+    { name: "Custom Website Design (5 Pages)", price: "₹5,999 (Offer, reg. ₹11,999)", desc: "Ultra-fast, mobile-optimized custom website with clean code and WhatsApp integration" },
+    { name: "Complete Brand Identity & Logo", price: "₹2,999 (Offer, reg. ₹5,999)", desc: "Vector logo design (.AI/.EPS/.SVG), Brand Style Guide, business card, and social media kit" },
+    { name: "Dedicated Lead Landing Page", price: "₹1,999 (Offer, reg. ₹3,999)", desc: "Single-page lead generation page optimized for ad campaigns, fast mobile loading, and analytics" },
+    { name: "Extra Edited Short-Form Reel", price: "₹499 / reel (Offer, reg. ₹999)", desc: "Hook scripting, professional cut, sound design, and dynamic subtitles (client footage)" },
+    { name: "WhatsApp Business API Setup", price: "₹2,999 (Offer, reg. ₹5,999)", desc: "Official Cloud API integration, automated greeting, interactive catalog, and CRM routing" },
+    { name: "Speed & Core Web Vitals Fix", price: "₹1,499 (Offer, reg. ₹2,999)", desc: "Code minification, asset compression, and caching configuration to achieve 85+ mobile score" }
   ],
 
   // AI Automation Services Data
