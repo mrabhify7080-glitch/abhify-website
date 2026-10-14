@@ -31,50 +31,57 @@ const PROCESS_STEPS = [
 
 const PRICING_PLANS = [
   {
-    name: "Starter",
-    price: "₹19,999",
+    name: "Starter Growth",
+    price: "₹2,999",
+    originalPrice: "₹5,999",
     period: "/month",
-    desc: "Essential marketing & search visibility for growing brands.",
+    desc: "Essential digital presence & local search visibility for startups and property dealers.",
     featured: false,
-    badge: "Essential",
+    badge: "50% OFF Launch",
+    reviewTimeline: "Initial Review: 30 Days",
     features: [
-      "On-Page & Technical SEO",
-      "Social Media Management (12 Posts)",
-      "Google Business Profile Setup",
-      "Monthly Performance Dashboard",
-      "Email Support"
+      "6 Social Media Posts Monthly",
+      "Basic Google Business Profile Optimization",
+      "Basic Content Planning",
+      "Monthly Performance Summary",
+      "WhatsApp Support"
     ]
   },
   {
-    name: "Growth",
-    price: "₹49,999",
+    name: "Business Growth",
+    price: "₹5,999",
+    originalPrice: "₹11,999",
     period: "/month",
-    desc: "Full-funnel digital marketing & paid performance to scale revenue.",
+    desc: "Active social content, Reels & local ads to scale inquiries and build local authority.",
     featured: true,
-    badge: "Most Popular",
+    badge: "MOST POPULAR",
+    reviewTimeline: "Initial Review: 30–60 Days",
     features: [
-      "Everything in Starter",
-      "Google Ads & Meta Ads Management",
-      "Conversion Rate Optimization (CRO)",
-      "High-Converting Landing Page Design",
-      "24/7 Dedicated Account Manager",
-      "Weekly ROI & Lead Reports"
+      "10 Social Media Posts Monthly",
+      "2 Edited Reels Monthly (Client Footage)",
+      "Google Business Profile Management",
+      "Basic Local SEO",
+      "Management of 1 Meta Ads Campaign",
+      "Monthly Performance Report"
     ]
   },
   {
-    name: "Premium",
-    price: "₹89,999",
+    name: "Premium Growth",
+    price: "₹9,999",
+    originalPrice: "₹19,999",
     period: "/month",
-    desc: "Complete enterprise marketing takeover & custom branding.",
+    desc: "Comprehensive multi-channel management and priority support for established businesses.",
     featured: false,
-    badge: "Enterprise",
+    badge: "50% OFF Launch",
+    reviewTimeline: "Initial Review: 60–90 Days",
     features: [
-      "Everything in Growth",
-      "Full Custom Website / App Redesign",
-      "Video Editing & Ad Creative Production",
-      "Omnichannel Scale Strategy",
-      "Priority Strategy Consultation",
-      "Custom API & Analytics Dashboard"
+      "14 Social Media Posts Monthly",
+      "4 Edited Reels Monthly (Client Footage)",
+      "Google Business Profile Management",
+      "Expanded Local SEO",
+      "Management of Up to 2 Meta Ads Campaigns",
+      "Monthly Performance Report",
+      "Priority WhatsApp Support"
     ]
   }
 ];
@@ -634,12 +641,14 @@ if (pricingGrid) {
         <span class="pricing-badge">${p.badge}</span>
         <h3>${p.name}</h3>
         <div class="pricing-price"><b>${p.price}</b><span>${p.period}</span></div>
+        ${p.originalPrice ? `<div style="font-size:12.5px;color:var(--text-muted);margin-top:-6px;margin-bottom:12px;">Standard: <span style="text-decoration:line-through;">${p.originalPrice}${p.period}</span></div>` : ''}
         <p style="font-size:13.5px;color:var(--text-secondary);">${p.desc}</p>
         <ul class="pricing-features">
           ${p.features.map(f => `<li><i class="fa-solid fa-circle-check"></i>${f}</li>`).join("")}
         </ul>
+        ${p.reviewTimeline ? `<div style="font-size:12px;color:var(--accent);margin-top:14px;padding:6px 12px;background:rgba(217,197,178,0.1);border-radius:6px;display:inline-block;font-weight:600;"><i class="fa-regular fa-clock" style="margin-right:6px;"></i>${p.reviewTimeline}</div>` : ''}
       </div>
-      <a href="contact.html" class="btn ${p.featured ? "btn-primary" : "btn-outline"} rippleize" style="margin-top:28px;width:100%;justify-content:center;">
+      <a href="contact.html?plan=${encodeURIComponent(p.name.toLowerCase().replace(/\s+/g, '-'))}" class="btn ${p.featured ? "btn-primary" : "btn-outline"} rippleize" style="margin-top:28px;width:100%;justify-content:center;">
         Get Started
       </a>`;
     pricingGrid.appendChild(card);
