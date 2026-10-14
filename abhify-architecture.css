@@ -39,21 +39,67 @@
   background: var(--gold-light-tint, rgba(198, 147, 75, 0.1));
 }
 
-.nav-links-modern li a.nav-badge-pill {
+/* ---------- RED POPUP & HIGHLIGHT: PRICING & AI AUTOMATION ---------- */
+@keyframes redPopPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.75);
+  }
+}
+
+.nav-links-modern li a.nav-badge-pill,
+.nav-links-modern li a[href*="prices"],
+.nav-links-modern li a[href*="ai-automation"],
+.nav-links li a[href*="prices"],
+.nav-links li a[href*="ai-automation"] {
   position: relative;
 }
 
-.nav-links-modern li a.nav-badge-pill::after {
-  content: "OFFERS";
-  font-size: 9px;
-  font-weight: 800;
+.nav-links-modern li a[href*="prices"] span,
+.nav-links-modern li a[href*="ai-automation"] span {
+  color: #DC2626 !important;
+  font-weight: 700;
+}
+
+.nav-links-modern li a.nav-badge-pill::after,
+.nav-links-modern li a[href*="prices"]::after {
+  content: "50% OFF" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
   letter-spacing: 0.5px;
-  color: #fff;
-  background: linear-gradient(135deg, #C6934B 0%, #A87635 100%);
-  padding: 2px 5px;
-  border-radius: 4px;
-  margin-left: 6px;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  padding: 2px 6px !important;
+  border-radius: 100px !important;
+  margin-left: 6px !important;
   vertical-align: middle;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
+}
+
+.nav-links-modern li a[href*="ai-automation"]::after {
+  content: "HOT" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  padding: 2px 6px !important;
+  border-radius: 100px !important;
+  margin-left: 6px !important;
+  vertical-align: middle;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
 }
 
 .mobile-nav a {
@@ -69,10 +115,102 @@
   transition: all 0.2s ease;
 }
 
+.mobile-nav a[href*="prices"],
+.mobile-nav a[href*="ai-automation"] {
+  color: #DC2626 !important;
+  font-weight: 800 !important;
+}
+
+.mobile-nav a[href*="prices"]::after {
+  content: "50% OFF" !important;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 100px !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+
+.mobile-nav a[href*="ai-automation"]::after {
+  content: "HOT" !important;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 100px !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+
 .mobile-nav a:hover,
 .mobile-nav a.active {
   color: var(--gold-accent-dark, #A87635);
   background: rgba(198, 147, 75, 0.06);
+}
+
+/* ---------- FOOTER EXPLORE: RED HIGHLIGHT & POP ---------- */
+.footer-col a[href*="prices"],
+.footer-col a[href*="ai-automation"],
+.footer-links a[href*="prices"],
+.footer-links a[href*="ai-automation"],
+footer a[href*="prices"],
+footer a[href*="ai-automation"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #DC2626 !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-col a[href*="prices"]:hover,
+.footer-col a[href*="ai-automation"]:hover,
+.footer-links a[href*="prices"]:hover,
+.footer-links a[href*="ai-automation"]:hover,
+footer a[href*="prices"]:hover,
+footer a[href*="ai-automation"]:hover {
+  color: #B91C1C !important;
+  transform: translateX(4px);
+}
+
+.footer-col a[href*="prices"]::after,
+.footer-links a[href*="prices"]::after,
+footer a[href*="prices"]::after {
+  content: "50% OFF" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  padding: 2px 7px !important;
+  border-radius: 100px !important;
+  margin-left: 8px !important;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
+}
+
+.footer-col a[href*="ai-automation"]::after,
+.footer-links a[href*="ai-automation"]::after,
+footer a[href*="ai-automation"]::after {
+  content: "HOT" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  padding: 2px 7px !important;
+  border-radius: 100px !important;
+  margin-left: 8px !important;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
 }
 
 /* ---------- SECTION HEADERS & BADGES ---------- */

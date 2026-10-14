@@ -6009,6 +6009,79 @@ nav .nav-links li a::after {
     padding: 10px 14px;
     right: 0;
   }
+/* ---------- RED POPUP & HIGHLIGHT: PRICING & AI AUTOMATION ---------- */
+@keyframes redPopPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.75);
+  }
+}
+
+.footer-col a[href*="prices"],
+.footer-col a[href*="ai-automation"],
+.footer-links a[href*="prices"],
+.footer-links a[href*="ai-automation"],
+footer a[href*="prices"],
+footer a[href*="ai-automation"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #DC2626 !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-col a[href*="prices"]:hover,
+.footer-col a[href*="ai-automation"]:hover,
+.footer-links a[href*="prices"]:hover,
+.footer-links a[href*="ai-automation"]:hover,
+footer a[href*="prices"]:hover,
+footer a[href*="ai-automation"]:hover {
+  color: #B91C1C !important;
+  transform: translateX(4px);
+}
+
+.footer-col a[href*="prices"]::after,
+.footer-links a[href*="prices"]::after,
+footer a[href*="prices"]::after {
+  content: "50% OFF" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  padding: 2px 7px !important;
+  border-radius: 100px !important;
+  margin-left: 8px !important;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
+}
+
+.footer-col a[href*="ai-automation"]::after,
+.footer-links a[href*="ai-automation"]::after,
+footer a[href*="ai-automation"]::after {
+  content: "HOT" !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  padding: 2px 7px !important;
+  border-radius: 100px !important;
+  margin-left: 8px !important;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.45);
+  animation: redPopPulse 2s infinite ease-in-out;
 }
 
 
