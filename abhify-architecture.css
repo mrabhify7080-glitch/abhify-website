@@ -10,34 +10,7 @@
    ============================================================ */
 
 /* ---------- NAVIGATION ENHANCEMENTS ---------- */
-.nav-links-modern {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links-modern li a {
-  text-decoration: none;
-  color: var(--text-dark-hero, #121417);
-  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
-  font-size: 14.5px;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.nav-links-modern li a:hover,
-.nav-links-modern li a.active {
-  color: var(--gold-accent-dark, #A87635);
-  background: var(--gold-light-tint, rgba(198, 147, 75, 0.1));
-}
+/* Using clean glassmorphism pill navbar defined in style.css */
 
 /* ---------- RED POPUP & HIGHLIGHT: PRICING & AI AUTOMATION ---------- */
 @keyframes redPopPulse {

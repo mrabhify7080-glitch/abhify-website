@@ -4850,6 +4850,11 @@ nav .nav-links li a.active {
   box-shadow: 0 4px 14px rgba(198, 147, 75, 0.35);
 }
 
+.nav-links-modern li a.active span,
+nav .nav-links li a.active span {
+  color: #FFFFFF !important;
+}
+
 .nav-links-modern li a.active:hover,
 nav .nav-links li a.active:hover {
   background: linear-gradient(135deg, #D49F56 0%, #9E6822 100%);
