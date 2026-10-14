@@ -11,8 +11,6 @@ const desktopNav = `      <!-- Clean Minimal Navigation -->
         <li><a href="index.html"><span>Home</span></a></li>
         <li><a href="about.html"><span>About</span></a></li>
         <li><a href="services.html"><span>Services</span></a></li>
-        <li><a href="prices.html" class="nav-badge-pill"><span>Pricing</span></a></li>
-        <li><a href="ai-automation.html"><span>AI Automation</span></a></li>
         <li><a href="portfolio.html"><span>Portfolio</span></a></li>
         <li><a href="blog.html"><span>Blog</span></a></li>
         <li><a href="contact.html"><span>Contact</span></a></li>
@@ -24,8 +22,6 @@ const mobileNav = `<div class="nav-overlay" id="navOverlay"></div>
   <a href="index.html">HOME</a>
   <a href="about.html">ABOUT</a>
   <a href="services.html">SERVICES</a>
-  <a href="prices.html">PRICING (OFFERS)</a>
-  <a href="ai-automation.html">AI AUTOMATION</a>
   <a href="portfolio.html">PORTFOLIO</a>
   <a href="blog.html">BLOG</a>
   <a href="contact.html">CONTACT</a>
